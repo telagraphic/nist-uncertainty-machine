@@ -1,0 +1,6 @@
+@mixin modular-scale($s-font, $l-font, $height-scale, $min-viewport, $max-viewport)
+  font-size: calc(#{$s-font}px + (#{$l-font} - #{$s-font}) * ((100vw - #{$min-viewport}px) / (#{$max-viewport} - #{$min-viewport})))
+  line-height: calc( #{$s-font * $height-scale}px + (#{$l-font * $height-scale} - #{$s-font * $height-scale}) * ((100vw - #{$min-viewport}px) / (#{$max-viewport} - #{$min-viewport})))
+
+h4
+  @include modular-scale(25, 50, 1.2, 320, 2000)
