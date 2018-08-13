@@ -1,0 +1,349 @@
+/* Css Reset ==================================== */
+html, body, div, img, p, table, thead, tbody, tfoot, tr,td,tt, h1,h2,h3,h4,h5,h6, a, span, fieldset  {
+	margin:0;
+	padding:00;
+	border:00;
+	outline:none;
+}
+html, body{
+	margin:0;
+	height: 100%;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	font-family: 'Lato', Times, 'Times New Roman', serif;
+	font-size: 16px;
+	font-family: "Source Sans Pro",Helvetica,Arial,sans-serif;
+}
+
+.content {
+	flex: 1 0 auto;
+	margin-left:10%;
+	margin-right:10%;
+}
+
+
+h4.title{
+	margin-left:15rem;
+	font-size: 28px;
+	margin-top:0.7rem;
+	min-width: 20rem;
+	color: #eee;
+	cursor: pointer;
+
+}
+
+h5.title{
+	margin-right:1rem;
+	color: #eee;
+	margin-left: auto;
+	cursor: pointer;
+}
+
+
+/*Form Parameters*/
+input,select{
+	margin-right:0.1cm;
+	padding: 2px;
+}
+input[type=file]{
+	width:0px;
+	color:transparent;
+	visibility:hidden;
+}
+
+.paramLine{
+	display: flex
+}
+.labelSample{
+	margin-left:5px;
+	margin-right:5px;
+}
+
+.output{
+	overflow-y: hidden;
+	width: 300px;
+	height: 51px;
+	margin-left:5px;
+	margin-right:5px;
+}
+
+select[id*='distChoice']
+{
+	width: 400px
+}
+
+select[id*='distChoice']  > option[value="25"]
+{
+	font-weight: bold;
+}
+
+input[type=submit] {
+	padding: 5px 20px;
+	margin-top: 0.1cm;
+	cursor: pointer;
+	font-weight: bold;
+	text-align: center;
+
+}
+:focus {outline:none;}
+::-moz-focus-inner {border:0;}
+
+
+#reset {
+	padding: 3px 10px;
+	text-align: center;
+	cursor: pointer;
+	color: #ff1000;
+	font-weight: bold;
+}
+
+
+img {
+	width: 100%;
+	height: auto;
+	max-width: 600px;
+}
+
+legend {margin-left:1.3rem;}
+fieldset {border:2px solid #bbb;
+		-moz-border-radius:5px;
+		-webkit-border-radius:5px;
+		border-radius:5px;
+		padding:15px;
+		padding-top:5px;
+		}
+
+/*Page Settings*/
+.resultsText { width: 50% ; float: left}
+.columnRight{ width: 49%; float: right;	margin-top: 1rem;}
+#instruction { width: 49% ; display: inline-block;}
+#disclaimer { width: 50% ; }
+#load{ width: 49%; display: inline-block; }
+#form{ width: 100%;}
+
+
+/*Links and dropzone settings*/
+a:not(.image) {
+	color: #12659c;
+	text-decoration: none;
+	-webkit-transition: color .15s ease;
+	-moz-transition: color .15s ease;
+	-ms-transition: color .15s ease;
+	-o-transition: color .15s ease;
+	transition: color .15s ease;
+}
+a:not(.image):hover {
+	text-decoration: underline;
+
+	text-shadow: none;
+	border: none;
+	border-radius: 2px;
+}
+
+#drop_zone{
+	margin-top:80px;
+	border:2px dashed #bbb;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	padding:15px;
+	width: 50%;
+	text-align:center;font: 20pt bold 'Vollkorn';
+	color:#888;
+	cursor: pointer;
+	max-width: 500px;
+}
+
+#drop_zone:hover {background-color: #bbb}
+
+.drop_zone2{
+	border:2px dashed #bbb;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	text-align:center;font: 20pt bold 'Vollkorn';
+	color:#888;
+	cursor: pointer;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.drop_zone2:hover {background-color: #bbb}
+
+
+
+/*Dropdow menu for examples*/
+.dropbtn {
+	color: white;
+	font-size: 16px;
+	border: none;
+	cursor: pointer;
+	padding: 2px 5px 2px 2px;
+}
+
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 90px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+}
+
+.dropdown-content a {
+	color: black;
+	padding: 5px 5px;
+	text-decoration: none;
+	display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+.dropdown:hover .dropbtn {
+	background-color: #bbb;
+}
+
+
+
+
+/*dynamic display*/
+@media screen and (max-width: 1024px) {
+	.resultsText { width: 50% ; float: none}
+	.columnRight{ max-width: 450px;width: 100%; float: none}
+	#instruction { width: 100% ;}
+	#load{ width: 100%;  }
+	#drop_zone{  margin-top:10px;width: 90%;}
+
+}
+
+
+/*####-Nist Header*/
+.nist-header
+{
+	min-height: 58px;
+	max-height: 58px;
+	background: black;
+}
+.nist-header__logo {
+	position: absolute;
+	top: 12px;
+	left: 10px;
+	z-index: 100;
+	padding: 0;
+	margin-left: 5rem;
+	width: 110px;
+	height: 30px;
+}
+
+.nist-header__title {
+	display:flex;
+}
+
+/*####-Nist Footer*/
+
+
+.nist-footer {
+	background: #333333;
+	position: relative;
+	z-index: 200;
+	font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+	box-sizing: border-box;
+	margin-left: 0cm;
+
+	margin-right: 0cm;
+}
+
+.nist-footer__inner {
+	margin-left: auto;
+	margin-right: auto;
+	/*! max-width: 1200px; */
+	padding-right: 16px;
+	padding-right: 1rem;
+	padding-left: 16px;
+	padding-left: 1rem;
+}
+
+.nist-footer__inner:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.nist-footer {
+	background: #333333;
+	color: white;
+	padding: 0.2rem 0rem 0.2rem 0rem;
+	position: relative;
+}
+
+.nist-footer a {
+	color: white;
+	text-decoration: none;
+}
+
+
+
+.nist-footer__menu {
+	clear: both;
+	margin-bottom:0px;
+	max-width: 800px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.nist-footer__menu.first {
+	padding-top: 20.8px;
+	padding-top: 1.3rem;
+}
+
+.nist-footer__menu ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-align: center;
+}
+
+.nist-footer__menu-item {
+	display: inline-block;
+	font-size: 14.4px;
+	font-size: 0.9rem;
+	padding: 0;
+	margin-left: 0;
+}
+
+.nist-footer__menu-item:after {
+	content: '|';
+	margin-right: 1.6px;
+	margin-right: 0.1rem;
+	display: inherit;
+	position: static;
+	font: inherit;
+	line-height: inherit;
+	color: inherit;
+}
+
+.nist-footer__menu-item:last-child:after {
+	content: none;
+}
+
+.nist-footer__menu-item a {
+	font-weight: normal;
+	margin-right: 6.4px;
+	margin-right: 0.4rem;
+	white-space: nowrap;
+	padding: 0.1em 0;
+	display: inline-block;
+	font-size: 10px;
+}
