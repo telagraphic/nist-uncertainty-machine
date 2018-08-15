@@ -1,0 +1,43 @@
+body
+  font-size: 100%
+  font-family: "Source Sans Pro",Helvetica,Arial,sans-serif
+
+.audit-container
+  display: grid
+  grid-template-rows: 100vh
+  grid-template-columns: 100vw
+
+  header
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+
+
+
+  .slide
+    max-width: 79%
+    margin: 0 auto
+
+    .content
+      display: grid
+      grid-template: max-content max-content / 33% 66%
+      grid-template-areas: "header header" "ui ux"
+
+    h2
+      grid-area: header
+
+    .ui
+      grid-area: ui
+
+    .ux
+      grid-area: ux
+
+    h2, h3, h4
+      padding: 1rem 0 2rem 0
+
+    ul
+      padding: 0 0 2rem 0
+
+    li
+      padding: .5rem 0

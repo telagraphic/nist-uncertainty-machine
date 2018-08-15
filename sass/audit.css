@@ -1,0 +1,52 @@
+body {
+  font-size: 100%;
+  font-family: "Source Sans Pro",Helvetica,Arial,sans-serif;
+}
+
+.audit-container {
+  display: grid;
+  grid-template-rows: 100vh;
+  grid-template-columns: 100vw;
+}
+
+.audit-container header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.audit-container .slide {
+  max-width: 79%;
+  margin: 0 auto;
+}
+
+.audit-container .slide .content {
+  display: grid;
+  grid-template: max-content max-content / 33% 66%;
+  grid-template-areas: "header header" "ui ux";
+}
+
+.audit-container .slide h2 {
+  grid-area: header;
+}
+
+.audit-container .slide .ui {
+  grid-area: ui;
+}
+
+.audit-container .slide .ux {
+  grid-area: ux;
+}
+
+.audit-container .slide h2, .audit-container .slide h3, .audit-container .slide h4 {
+  padding: 1rem 0 2rem 0;
+}
+
+.audit-container .slide ul {
+  padding: 0 0 2rem 0;
+}
+
+.audit-container .slide li {
+  padding: .5rem 0;
+}
