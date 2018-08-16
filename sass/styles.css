@@ -60,6 +60,11 @@ a {
   align-content: center;
 }
 
+.nist-header a svg {
+  background-size: contain;
+  width: 100%;
+}
+
 @media (min-width: 35em) {
   .nist-header {
     padding: 1rem 0;

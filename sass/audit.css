@@ -1,6 +1,8 @@
 body {
   font-size: 100%;
   font-family: "Source Sans Pro",Helvetica,Arial,sans-serif;
+  font-size: calc(25px + (40 - 25) * ((100vw - 320px) / (2000 - 320)));
+  line-height: calc( 30px + (48 - 30) * ((100vw - 320px) / (2000 - 320)));
 }
 
 .audit-container {
@@ -23,16 +25,28 @@ body {
 
 .audit-container .slide .content {
   display: grid;
-  grid-template: max-content max-content / 33% 66%;
-  grid-template-areas: "header header" "ui ux";
+  grid-template: max-content max-content max-content / 33% 66%;
+  grid-template-areas: "header header" "ui-points ui-notes" "ux ux";
 }
 
 .audit-container .slide h2 {
   grid-area: header;
 }
 
-.audit-container .slide .ui {
-  grid-area: ui;
+.audit-container .slide img {
+  padding: 2rem 0;
+}
+
+.audit-container .slide .ui-points, .audit-container .slide .ui-notes, .audit-container .slide .ux {
+  padding: 0 4rem 0 0;
+}
+
+.audit-container .slide .ui-points {
+  grid-area: ui-points;
+}
+
+.audit-container .slide .ui-notes {
+  grid-area: ui-notes;
 }
 
 .audit-container .slide .ux {
@@ -40,7 +54,7 @@ body {
 }
 
 .audit-container .slide h2, .audit-container .slide h3, .audit-container .slide h4 {
-  padding: 1rem 0 2rem 0;
+  padding: 3rem 0 2rem 0;
 }
 
 .audit-container .slide ul {
@@ -48,5 +62,5 @@ body {
 }
 
 .audit-container .slide li {
-  padding: .5rem 0;
+  padding: 1rem 0;
 }
