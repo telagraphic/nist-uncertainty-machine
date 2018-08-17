@@ -1,0 +1,45 @@
+footer {
+  grid-area: footer;
+  background-color: black;
+  grid-row-start: 3;
+  grid-row-end: 4;
+}
+
+footer section {
+  display: flex;
+}
+
+footer ul {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem .5rem;
+  list-style: none;
+}
+
+@media (min-width: 35em) {
+  footer ul {
+    margin: 0 auto;
+    flex-wrap: wrap;
+    text-align: left;
+  }
+}
+
+footer li {
+  padding: .5rem 0;
+  font-size: 1.1rem;
+}
+
+@media (min-width: 35em) {
+  footer li {
+    padding: .5rem 1rem;
+  }
+}
+
+footer a {
+  color: white;
+  transition: all .4s ease-in;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
