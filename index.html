@@ -51,8 +51,7 @@
 							<a href="./?example=Allende">Allende</a>
 					  </div>
 					</div>
-					<br/>
-					Instructions :
+					<!-- Instructions :
 					<ul>
 						<li>Select the number of input quantities.</li>
 						<li>Change the quantity names if necessary.</li>
@@ -61,175 +60,127 @@
 						<li>Write the definition of the output quantity in a valid R expression.</li>
 						<li>Choose and set the correlations if necessary.</li>
 						<li>Run the computation.</li>
-					</ul>
+					</ul> -->
 				</div>
 				<div id="load">
 
 					<div id="drop_zone">Drop configuration file here or click to upload</div>
 					<input type='file' title="No file selected" id="files" onchange="pressed()"><label id="fileLabel"> </label>
-					<p>
-						<input id="reset" type="button" value="Reset" onClick="window.location.replace(location.pathname);">
-					</p>
+					<section class="reset">
+            <input id="reset" type="button" value="Reset" onClick="window.location.replace(location.pathname);">
+          </section>
 				</div>
 			</div>
 			<div id="form">
 			  <form name="input" id="input"  method="POST" action="validation.php" target="_blank">
-					<section class="step-1">
-            Number of input quantities:
-						<select id="inputs" name="inputs">
-							<option value="1" selected> 1</option>
-							<option value="2"> 2</option>
-							<option value="3"> 3</option>
-							<option value="4"> 4</option>
-							<option value="5"> 5</option>
-							<option value="6"> 6</option>
-							<option value="7"> 7</option>
-							<option value="8"> 8</option>
-							<option value="9"> 9</option>
-							<option value="10"> 10</option>
-							<option value="11"> 11</option>
-							<option value="12"> 12</option>
-							<option value="13"> 13</option>
-							<option value="14"> 14</option>
-							<option value="15"> 15</option>
-						</select>
-					</section>
-  				<!-- <p id="nameHeader">Names of input quantities:
-  					<div id="nameList">
-  					</div>
-  				</p>
-					<div >
-						<table id='distributions'>
-						</table>
-					</div> -->
 
-          <section class="step-2">
-            <table id="">
-              <tr class="distrib" id="distrib0">
-                <th>
-                  <input oninput="updateNames()" maxlength="20" class="nameField" value="x0" id="name0" name="name0" type="text">
-                </th>
-                <td>
-                  <select id="distChoice0" name="distChoice0" onchange="plotParamLine(0)">
-                    <option value="0">Bernoulli (Prob. of success)</option>
-                    <option value="21">Beta -- Shifted &amp; Rescaled (Mean, StdDev, Left, Right)</option>
-                    <option value="20">Constant (Value)</option>
-                    <option value="4">Exponential (Mean)</option>
-                    <option value="7">Gaussian (Mean, StdDev)</option>
-                    <option value="10">Rectangular (Left Endpoint, Right Endpoint)</option>
-                    <option value="9">Rectangular (Mean, StdDev)</option>
-                    <option value="11">Student t (Mean, StdDev, No. of degrees of freedom)</option>
-                    <option value="15">Triangular -- Asymmetric (Left Endpoint, Mode, Right Endpoint)</option>
-                    <option value="14">Triangular -- Symmetric (Left Endpoint, Right Endpoint)</option>
-                    <option value="13">Triangular -- Symmetric (Mean, StdDev)</option>
-                    <option value="17">Uniform (Left Endpoint, Right Endpoint)</option>
-                    <option value="16">Uniform (Mean, StdDev)</option>
-                    <option value="24">Sample values (between 30 and 100000)</option>
-                    <option value="25">More choices</option>
-                  </select>
-                </td>
-                <td>
-                  <div class="paramLine" id="param0">
-                    <input class="paramField0" size="10" value="1" name="paramField0-0" id="paramField0-0" type="text">
-                    <input class="paramField0" size="10" value="1" name="paramField0-1" id="paramField0-1" type="text">
-                  </div>
-                </td>
-              </tr>
-              <tr class="distrib" id="distrib1">
-                <th>
-                  <input oninput="updateNames()" maxlength="20" class="nameField" value="x1" id="name1" name="name1" type="text">
-                </th>
-                <td>
-                  <select id="distChoice1" name="distChoice1" onchange="plotParamLine(1)">
-                    <option value="0">Bernoulli (Prob. of success)</option>
-                    <option value="21">Beta -- Shifted &amp; Rescaled (Mean, StdDev, Left, Right)</option>
-                    <option value="20">Constant (Value)</option>
-                    <option value="4">Exponential (Mean)</option>
-                    <option value="7">Gaussian (Mean, StdDev)</option>
-                    <option value="10">Rectangular (Left Endpoint, Right Endpoint)</option>
-                    <option value="9">Rectangular (Mean, StdDev)</option>
-                    <option value="11">Student t (Mean, StdDev, No. of degrees of freedom)</option>
-                    <option value="15">Triangular -- Asymmetric (Left Endpoint, Mode, Right Endpoint)</option>
-                    <option value="14">Triangular -- Symmetric (Left Endpoint, Right Endpoint)</option>
-                    <option value="13">Triangular -- Symmetric (Mean, StdDev)</option>
-                    <option value="17">Uniform (Left Endpoint, Right Endpoint)</option>
-                    <option value="16">Uniform (Mean, StdDev)</option>
-                    <option value="24">Sample values (between 30 and 100000)</option>
-                    <option value="25">More choices</option>
-                  </select>
-                </td>
-                <td>
-                  <div class="paramLine" id="param1"><input class="paramField1" size="10" value="1" name="paramField1-0" id="paramField1-0" type="text"><input class="paramField1" size="10" value="1" name="paramField1-1" id="paramField1-1" type="text"></div>
-                </td>
-              </tr>
-              <tr class="distrib" id="distrib2">
-                <th>
-                  <input oninput="updateNames()" maxlength="20" class="nameField" value="x2" id="name2" name="name2" type="text">
-                </th>
-                <td>
-                  <select id="distChoice2" name="distChoice2" onchange="plotParamLine(2)">
-                    <option value="0">Bernoulli (Prob. of success)</option>
-                    <option value="21">Beta -- Shifted &amp; Rescaled (Mean, StdDev, Left, Right)</option>
-                    <option value="20">Constant (Value)</option>
-                    <option value="4">Exponential (Mean)</option>
-                    <option value="7">Gaussian (Mean, StdDev)</option>
-                    <option value="10">Rectangular (Left Endpoint, Right Endpoint)</option>
-                    <option value="9">Rectangular (Mean, StdDev)</option>
-                    <option value="11">Student t (Mean, StdDev, No. of degrees of freedom)</option>
-                    <option value="15">Triangular -- Asymmetric (Left Endpoint, Mode, Right Endpoint)</option>
-                    <option value="14">Triangular -- Symmetric (Left Endpoint, Right Endpoint)</option>
-                    <option value="13">Triangular -- Symmetric (Mean, StdDev)</option>
-                    <option value="17">Uniform (Left Endpoint, Right Endpoint)</option>
-                    <option value="16">Uniform (Mean, StdDev)</option>
-                    <option value="24">Sample values (between 30 and 100000)</option>
-                    <option value="25">More choices</option>
-                  </select>
-                </td>
-                <td>
-                  <div class="paramLine" id="param2"><input class="paramField2" size="10" value="1" name="paramField2-0" id="paramField2-0" type="text"><input class="paramField2" size="10" value="1" name="paramField2-1" id="paramField2-1" type="text"></div>
-                </td>
-              </tr>
-            </table>
+          <section class="step-1">
+            <section class="sub-step-1">
+              Select the number of input quantities:
+              <select id="inputs" name="inputs">
+                <option value="1" selected> 1</option>
+                <option value="2"> 2</option>
+                <option value="3"> 3</option>
+                <option value="4"> 4</option>
+                <option value="5"> 5</option>
+                <option value="6"> 6</option>
+                <option value="7"> 7</option>
+                <option value="8"> 8</option>
+                <option value="9"> 9</option>
+                <option value="10"> 10</option>
+                <option value="11"> 11</option>
+                <option value="12"> 12</option>
+                <option value="13"> 13</option>
+                <option value="14"> 14</option>
+                <option value="15"> 15</option>
+              </select>
+
+
+              <!-- <p id="nameHeader">Names of input quantities:
+
+              </p>
+              <div >
+                <table id='distributions'>
+                </table>
+              </div> -->
+
+            </section>
+            <section class="sub-step-2">
+              <!-- <div id="nameList">
+              </div> -->
+              <p>
+                For each input quantity choose its distribution and its parameters.  Change the quantity names if necessary.
+              </p>
+              <table id="distributions">
+              </table>
+            </section>
+
           </section>
-  				<section>
-            Number of realizations of the output quantity:
-  					<!-- <input name='nReal' id='nReal' type='text' value='1000000'> -->
-            <input name='nReal' id='nReal' type='number' value='1000000' max="5000000" required>
+  				<section class="step-2">
+            <div class="sub-step-1">
+              <p>
+                Number of realizations of the output quantity:
+              </p>
+
+              <!-- <input name='nReal' id='nReal' type='text' value='1000000'> -->
+              <input name='nReal' id='nReal' type='number' value='1000000' max="5000000" required>
+            </div>
+            <div class="sub-step-2">
+              <p>
+                Random number generator seed, selected at random on screen load or when reset button is pressed.
+              </p>
+              <input name='seed' id='seed' type='number' value='' size="4" max="100" required>
+              <!-- <input type="text" pattern="[0-9]*" maxlength="3"> -->
+            </div>
   				</section>
-          <section>
-            Random number generator seed:
-            <input name='seed' id='seed' type='number' value='' size="4" max="100" required>
-            <!-- <input type="text" pattern="[0-9]*" maxlength="3"> -->
+          <section class="step-3">
+            <p>
+              Definition of output quantity (R expression): Write the definition of the output quantity in a valid R expression
+            </p>
+            <div>
+              <button id='dec' type="button" onclick=removeOutput()>-</button>
+              <button id='inc' type="button" onclick=addOutput()>+</button>
+            </div>
+            <div id="container">
+              <textarea class='output'  name='output1' id='output1' height=51px></textarea>
+            </div>
           </section>
-  				<div id="container">
-  					Definition of output quantity (R expression):
-  					<textarea class='output'  name='output1' id='output1' height=51px></textarea>
-  					<button id='dec' type="button" onclick=removeOutput()>-</button>
-  					<button id='inc' type="button" onclick=addOutput()>+</button>
-  				</div>
-  				<label><input type="checkbox"  name="symmetrical" id="symmetrical" value="bar" /> Symmetrical coverage intervals</label>
-  				<label><input type="checkbox"  name="correlation" id="correlation" value="bar" /> Correlations</label>
-  				<div id='correlationClass'>
-  					<table id='correlationTable'>
-  					</table>
-  					<table >
-  						<tr>
-  							<td>
-  								<div id="copula">
-  								</div>
-  							</td>
-  							<td>
-  								<div id="copulaParam">
-  								</div>
-  							</td>
-  						</tr>
-  					</table>
-  				</div>
-
-  				<input type="submit" value="Run the computation"/>
-  				<div id="state"></div>
-  				<span id='error'></span>
-  				<span id='percent'></span><br/>
+          <section class="step-4">
+            <div class="sub-step-1">
+              <label><input type="checkbox"  name="symmetrical" id="symmetrical" value="bar" /> Symmetrical coverage intervals</label>
+            </div>
+            <div class="sub-step2">
+              <p>
+                Choose and set the correlations if necessary
+              </p>
+              <label><input type="checkbox"  name="correlation" id="correlation" value="bar" /> Correlations</label>
+              <div id='correlationClass'>
+                <table id='correlationTable'>
+                </table>
+                <table >
+                  <tr>
+                    <td>
+                      <div id="copula">
+                      </div>
+                    </td>
+                    <td>
+                      <div id="copulaParam">
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </section>
+          <section class="step-5">
+            <input type="submit" value="Run the computation"/>
+            <input id="reset" type="button" value="Reset" onClick="window.location.replace(location.pathname);">
+          </section>
+          <section class="step-6">
+            <div id="state"></div>
+            <span id='error'></span>
+            <span id='percent'></span>
+          </section>
   			</form>
 			</div>
 		</div>

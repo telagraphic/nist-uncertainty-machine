@@ -92,6 +92,7 @@ function changeNumberInput(){
 	{
 		var toInsert="<input type='text' oninput='updateNames()' maxlength='20' class='nameField'  value=x"+(i)+" id='name"+(i)+"' name='name"+(i)+"' > ";
 		$('#nameList').append($(toInsert));
+		$("#distributions tr#distrib"+(i)).append($(toInsert));
 	}
 
 	for (var i=inputNb;i>=newInputNb;i--)
@@ -117,8 +118,8 @@ function addOutput(){
 function changeNumberOutput(newOut){
 	var oldOut=outputNb ;
 
-	$('#dec').remove();
-	$('#inc').remove();
+	// $('#dec').remove();
+	// $('#inc').remove();
 
 	if(newOut > oldOut && newOut < 11)
 	{
@@ -140,8 +141,8 @@ function changeNumberOutput(newOut){
 		}
 	}
 
-	var toInsert="<button id='dec' type='button' onclick=removeOutput()>-</button><button id='inc' type='button' onclick=addOutput()>+</button>";
-	$('#container').append($(toInsert));
+	// var toInsert="<button id='dec' type='button' onclick=removeOutput()>-</button><button id='inc' type='button' onclick=addOutput()>+</button>";
+	// $('#container').append($(toInsert));
 
 }
 
@@ -152,7 +153,7 @@ function updateNames(){
 	n=parseInt($('#inputs').val());
 	for (var i=0;i<n;i++)
 	{
-		$( '#label'+(i)).text($("input[name=name"+i+"]").val());
+		// $( '#label'+(i)).text($("input[name=name"+i+"]").val());
 	}
 	if($('#correlation').prop('checked')==true)
 		plotCorrelationTable();
@@ -224,7 +225,12 @@ function plotDistribLine(){
 
 	for (var i=inputNb;i<newInputNb;i++)
 	{
-		var toInsert="<tr class='distrib' id='distrib"+(i)+"' ><th id='label"+(i)+"'>"+$("input[name=name"+i+"]").val()+"</th><td><select id='distChoice"+(i)+"' name='distChoice"+(i)+"' onchange='plotParamLine("+(i)+")' ></select></td><td><div class='paramLine' id='param"+(i)+"' ></div></td> </tr>";
+
+		//  replace the <th> with a <td> with child input from the namelist!
+		var toInsert="<tr class='distrib' id='distrib"+(i)+"' ><td id='label"+(i)+"'>"+"<input type='text' oninput='updateNames()' maxlength='20' class='nameField'  value=x"+(i)+" id='name"+(i)+"' name='name"+(i)+"' >"+"</td><td><select id='distChoice"+(i)+"' name='distChoice"+(i)+"' onchange='plotParamLine("+(i)+")' ></select></td><td><div class='paramLine' id='param"+(i)+"' ></div></td> </tr>";
+
+		// previous code
+		// var toInsert="<tr class='distrib' id='distrib"+(i)+"' ><th id='label"+(i)+"'>"+$("input[name=name"+i+"]").val()+"</th><td><select id='distChoice"+(i)+"' name='distChoice"+(i)+"' onchange='plotParamLine("+(i)+")' ></select></td><td><div class='paramLine' id='param"+(i)+"' ></div></td> </tr>";
 		$('#distributions').append($(toInsert));
 		sortSelect(i);
 		$( '#distChoice'+(i) ).val(7);
@@ -607,7 +613,7 @@ function loadSample(lines,dropId) {
 	var samplesize =res1.length;
 	res1=res1.join(separator=";")
 	var lengthstr =res1.length;
-	var dropIdNumber = 		parseInt(dropId.match(/[0-9]+/g))
+	var dropIdNumber = parseInt(dropId.match(/[0-9]+/g))
 		$('#paramField'+(dropIdNumber)+'-'+(0)).val(res1);
 
 	$('#labeltext'+(dropIdNumber)).text(" " + samplesize + " Samples loaded ");
