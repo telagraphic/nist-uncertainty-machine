@@ -1,16 +1,16 @@
-root {
-  --background-color: black;
+html, body {
+  width: 100%;
+  height: 100%;
 }
 
 body {
   font-size: 100%;
   font-family: "Source Sans Pro",Helvetica,Arial,sans-seif;
-  height: 100%;
 }
 
 @media (min-width: 35em) {
   body {
-    font-size: 100%;
+    padding: 0;
   }
 }
 
@@ -21,13 +21,26 @@ a {
 .grid-container {
   min-height: 100%;
   display: grid;
-  grid-template-rows: auto auto auto;
-  grid-template-columns: 100vw;
+  grid-template-rows: 5% 85% 10%;
+  grid-template-columns: 100%;
   grid-template-areas: "header" "content" "footer";
 }
 
-.content {
+header {
+  grid-area: header;
+}
+
+main {
   grid-area: content;
-  width: 65%;
-  margin: 0 auto;
+}
+
+@media (min-width: 35em) {
+  main {
+    width: 65%;
+    margin: 0 auto;
+  }
+}
+
+footer {
+  grid-area: footer;
 }

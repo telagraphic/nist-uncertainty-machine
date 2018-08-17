@@ -1,4 +1,4 @@
-.header {
+header {
   grid-area: header;
   display: grid;
   grid-template-columns: auto;
@@ -6,47 +6,66 @@
   grid-template-areas: "logo" "title";
   background-color: black;
   color: white;
-  padding: 1.5rem;
+  padding: 1rem;
 }
 
 @media (min-width: 35em) {
-  .header {
+  header {
     grid-template-columns: 15% 85%;
     grid-template-areas: "logo title";
     align-items: center;
+    padding: 1.5rem;
   }
 }
 
-.header a {
+header a {
   grid-area: logo;
-  padding: 0rem;
   display: flex;
   justify-content: center;
+  padding: 0rem;
   width: 100%;
 }
 
-.header a img {
+header a img {
   width: 100%;
 }
 
-.header section {
+header section {
   grid-area: title;
   display: flex;
-  flex-direction: column;
-  text-align: center;
+  flex-direction: row;
+  text-align: left;
+  padding: 1rem 0 0 0;
 }
 
 @media (min-width: 35em) {
-  .header section {
+  header section {
     flex-direction: row;
     text-align: left;
   }
 }
 
-.header section .title {
-  padding: 0 0 0 2rem;
+header section .title {
+  flex: 1 0 auto;
 }
 
-.header section .version {
-  padding: 0 0 0 2rem;
+@media (min-width: 35em) {
+  header section .title {
+    padding: 0 0 0 2rem;
+  }
+}
+
+header section .version {
+  flex: 1;
+  text-align: right;
+}
+
+@media (min-width: 35em) {
+  header section .version {
+    padding: 0 0 0 2rem;
+  }
+}
+
+header section h4 {
+  font-size: 1.1rem;
 }

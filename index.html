@@ -24,57 +24,57 @@
 		</script>
   </head>
   <body>
-    <section class="grid-container">
-      <div class="header">
-    		<a href="https://www.nist.gov/" title="National Institute of Standards and Technology" class="nist-header__logo-link" rel="home">
-          <img src="nist-logo.svg" alt="NIST Logo">
-    		</a>
-        <section>
-          <h4 class="title" onClick="window.location.replace('./index.php');">Uncertainty Machine</h4>
-      		<h4 class="version" onClick="window.location.replace('./verification.php');">v1.3.5</h4>
-        </section>
-      </div>
 
-  		<div class="content">
-  			<div id="help">
-  				<div id="instruction">
-  					<br/>
-  					User's manual available <a  href="./NISTUncertaintyMachine-UserManual.pdf"> here.</a>
-  					<br/>
-  					<div class="dropdown">
-  					  <a href="#" class="dropbtn">Load examples</a>
-  					  <div class="dropdown-content">
-  					    <a href="./?example=Gauge">Gauge</a>
-  							<a href="./?example=Resistance">Resistance</a>
-  							<a href="./?example=Stefan">Stefan</a>
-  							<a href="./?example=Thermal">Thermal</a>
-  							<a href="./?example=Viscosity">Viscosity</a>
-  							<a href="./?example=Voltage">Voltage</a>
-  							<a href="./?example=Allende">Allende</a>
-  					  </div>
-  					</div>
-  					<!-- Instructions :
-  					<ul>
-  						<li>Select the number of input quantities.</li>
-  						<li>Change the quantity names if necessary.</li>
-  						<li>For each input quantity choose its distribution and its parameters.</li>
-  						<li>Choose the number of realizations.</li>
-  						<li>Write the definition of the output quantity in a valid R expression.</li>
-  						<li>Choose and set the correlations if necessary.</li>
-  						<li>Run the computation.</li>
-  					</ul> -->
-  				</div>
-  				<div id="load">
+    <header>
+      <a href="https://www.nist.gov/" title="National Institute of Standards and Technology" class="nist-header__logo-link" rel="home">
+        <img src="nist-logo.svg" alt="NIST Logo">
+      </a>
+      <section>
+        <h4 class="title" onClick="window.location.replace('./index.php');">Uncertainty Machine</h4>
+        <h4 class="version" onClick="window.location.replace('./verification.php');">v1.3.5</h4>
+      </section>
+    </header>
+    <main>
+      <div class="content">
+        <div id="help">
+          <div id="instruction">
+            <br/>
+            User's manual available <a  href="./NISTUncertaintyMachine-UserManual.pdf"> here.</a>
+            <br/>
+            <div class="dropdown">
+              <a href="#" class="dropbtn">Load examples</a>
+              <div class="dropdown-content">
+                <a href="./?example=Gauge">Gauge</a>
+                <a href="./?example=Resistance">Resistance</a>
+                <a href="./?example=Stefan">Stefan</a>
+                <a href="./?example=Thermal">Thermal</a>
+                <a href="./?example=Viscosity">Viscosity</a>
+                <a href="./?example=Voltage">Voltage</a>
+                <a href="./?example=Allende">Allende</a>
+              </div>
+            </div>
+            <!-- Instructions :
+            <ul>
+              <li>Select the number of input quantities.</li>
+              <li>Change the quantity names if necessary.</li>
+              <li>For each input quantity choose its distribution and its parameters.</li>
+              <li>Choose the number of realizations.</li>
+              <li>Write the definition of the output quantity in a valid R expression.</li>
+              <li>Choose and set the correlations if necessary.</li>
+              <li>Run the computation.</li>
+            </ul> -->
+          </div>
+          <div id="load">
 
-  					<div id="drop_zone">Drop configuration file here or click to upload</div>
-  					<input type='file' title="No file selected" id="files" onchange="pressed()"><label id="fileLabel"> </label>
-  					<section class="reset">
+            <div id="drop_zone">Drop configuration file here or click to upload</div>
+            <input type='file' title="No file selected" id="files" onchange="pressed()"><label id="fileLabel"> </label>
+            <section class="reset">
               <input id="reset" type="button" value="Reset" onClick="window.location.replace(location.pathname);">
             </section>
-  				</div>
-  			</div>
-  			<div id="form">
-  			  <form name="input" id="input"  method="POST" action="validation.php" target="_blank">
+          </div>
+        </div>
+        <div id="form">
+          <form name="input" id="input"  method="POST" action="validation.php" target="_blank">
 
             <section class="step-1">
               <section class="sub-step-1">
@@ -97,19 +97,8 @@
                   <option value="15"> 15</option>
                 </select>
 
-
-                <!-- <p id="nameHeader">Names of input quantities:
-
-                </p>
-                <div >
-                  <table id='distributions'>
-                  </table>
-                </div> -->
-
               </section>
               <section class="sub-step-2">
-                <!-- <div id="nameList">
-                </div> -->
                 <p>
                   For each input quantity choose its distribution and its parameters.  Change the quantity names if necessary.
                 </p>
@@ -118,7 +107,7 @@
               </section>
 
             </section>
-    				<section class="step-2">
+            <section class="step-2">
               <div class="sub-step-1">
                 <p>
                   Number of realizations of the output quantity:
@@ -134,7 +123,7 @@
                 <input name='seed' id='seed' type='number' value='' size="4" max="100" required>
                 <!-- <input type="text" pattern="[0-9]*" maxlength="3"> -->
               </div>
-    				</section>
+            </section>
             <section class="step-3">
               <p>
                 Definition of output quantity (R expression): Write the definition of the output quantity in a valid R expression
@@ -183,76 +172,73 @@
               <span id='error'></span>
               <span id='percent'></span>
             </section>
-    			</form>
-  			</div>
-  		</div>
-
-
-
-  	  <footer id="footer" class="nist-footer">
-        <section>
-          <ul>
-    				<li class="nist-footer__menu-item">
-    					<a href="https://www.nist.gov/privacy-policy">Privacy Statement</a>
-    				</li>
-    				<li class="nist-footer__menu-item">
-    					<a href="https://www.nist.gov/privacy-policy#privpolicy">Privacy Policy</a>
-    				</li>
-    				<li class="nist-footer__menu-item">
-    					<a href="https://www.nist.gov/privacy-policy#secnot">Security Notice</a>
-    				</li>
-    				<li class="nist-footer__menu-item">
-    					<a href="https://www.nist.gov/privacy-policy#accesstate">Accessibility Statement</a>
-    				</li>
-    				<li class="nist-footer__menu-item">
-    					<a href="https://www.nist.gov/privacy">NIST Privacy Program</a>
-    				</li>
-          </ul>
-          <ul>
-    				<li class="nist-footer__menu-item">
-    					<a href="https://www.nist.gov/no-fear-act-policy">No Fear Act Policy</a>
-    				</li>
-    				<li class="nist-footer__menu-item">
-    					<a href="https://www.nist.gov/disclaimer">Disclaimer</a>
-    				</li>
-    				<li class="nist-footer__menu-item">
-    					<a href="https://www.nist.gov/office-director/freedom-information-act">FOIA</a>
-    				</li>
-    				<li class="nist-footer__menu-item">
-    					<a href="https://www.nist.gov/environmental-policy-statement">Environmental Policy Statement</a>
-    				</li>
-    				<li class="nist-footer__menu-item">
-    					<a href="https://www.nist.gov/privacy-policy#cookie">Cookie Disclaimer</a>
-    				</li>
-          </ul>
-          <ul>
-    				<li class="nist-footer__menu-item ">
-    					<a href="https://www.nist.gov/summary-report-scientific-integrity">Scientific Integrity Summary</a>
-    				</li>
-    				<li class="nist-footer__menu-item ">
-    					<a href="https://www.nist.gov/nist-information-quality-standards">NIST Information Quality Standards</a>
-    				</li>
-    				<li class="nist-footer__menu-item">
-    					<a href="https://business.usa.gov/">Business USA</a>
-    				</li>
-    				<li class="nist-footer__menu-item">
-    					<a href="https://www.commerce.gov/">Commerce.gov</a>
-    				</li>
-    				<li class="nist-footer__menu-item">
-    					<a href="https://www.healthcare.gov/">Healthcare.gov</a>
-    				</li>
-          </ul>
-          <ul>
-    				<li class="nist-footer__menu-item">
-    					<a href="http://www.science.gov/">Science.gov</a>
-    				</li>
-    				<li class="nist-footer__menu-item">
-    					<a href="http://www.usa.gov/">USA.gov</a>
-    				</li>
-    			</ul>
-        </section>
-  	  </footer>
-    </section>
+          </form>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <section>
+        <ul>
+          <li>
+            <a href="https://www.nist.gov/privacy-policy">Privacy Statement</a>
+          </li>
+          <li>
+            <a href="https://www.nist.gov/privacy-policy#privpolicy">Privacy Policy</a>
+          </li>
+          <li>
+            <a href="https://www.nist.gov/privacy-policy#secnot">Security Notice</a>
+          </li>
+          <li>
+            <a href="https://www.nist.gov/privacy-policy#accesstate">Accessibility Statement</a>
+          </li>
+          <li>
+            <a href="https://www.nist.gov/privacy">NIST Privacy Program</a>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <a href="https://www.nist.gov/no-fear-act-policy">No Fear Act Policy</a>
+          </li>
+          <li>
+            <a href="https://www.nist.gov/disclaimer">Disclaimer</a>
+          </li>
+          <li>
+            <a href="https://www.nist.gov/office-director/freedom-information-act">FOIA</a>
+          </li>
+          <li>
+            <a href="https://www.nist.gov/environmental-policy-statement">Environmental Policy Statement</a>
+          </li>
+          <li>
+            <a href="https://www.nist.gov/privacy-policy#cookie">Cookie Disclaimer</a>
+          </li>
+        </ul>
+        <ul>
+          <li class="nist-footer__menu-item ">
+            <a href="https://www.nist.gov/summary-report-scientific-integrity">Scientific Integrity Summary</a>
+          </li>
+          <li class="nist-footer__menu-item ">
+            <a href="https://www.nist.gov/nist-information-quality-standards">NIST Information Quality Standards</a>
+          </li>
+          <li>
+            <a href="https://business.usa.gov/">Business USA</a>
+          </li>
+          <li>
+            <a href="https://www.commerce.gov/">Commerce.gov</a>
+          </li>
+          <li>
+            <a href="https://www.healthcare.gov/">Healthcare.gov</a>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <a href="http://www.science.gov/">Science.gov</a>
+          </li>
+          <li>
+            <a href="http://www.usa.gov/">USA.gov</a>
+          </li>
+        </ul>
+      </section>
+    </footer>
 
     <script src="js/jquery.js"></script>
     <script src="js/script.js"></script>

@@ -1,21 +1,23 @@
 footer
   grid-area: footer
   background-color: black
-  grid-row-start: 3
-  grid-row-end: 4
-
 
   section
     display: flex
+    flex-direction: column
+    padding: 1rem
+
+    @media (min-width: 35em)
+      width: 80%
+      margin: 0 auto
 
   ul
     display: flex
     flex-direction: column
-    padding: 1rem .5rem
+    padding: 0
     list-style: none
 
     @media (min-width: 35em)
-
       margin: 0 auto
       flex-wrap: wrap
       text-align: left

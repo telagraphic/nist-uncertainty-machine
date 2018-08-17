@@ -1,25 +1,27 @@
-.header
+header
   grid-area: header
   display: grid
   grid-template-columns: auto
   grid-template-rows: max-content
   grid-template-areas: "logo" "title"
-  // width: 100vw
+
   background-color: black
   color: white
-  // height: 100%
-  padding: 1.5rem
+  padding: 1rem
 
   @media (min-width: 35em)
     grid-template-columns: 15% 85%
     grid-template-areas: "logo title"
     align-items: center
 
+    padding: 1.5rem
+
   a
     grid-area: logo
-    padding: 0rem
     display: flex
     justify-content: center
+
+    padding: 0rem
     width: 100%
 
     img
@@ -28,8 +30,9 @@
   section
     grid-area: title
     display: flex
-    flex-direction: column
-    text-align: center
+    flex-direction: row
+    text-align: left
+    padding: 1rem 0 0 0
 
     @media (min-width: 35em)
       flex-direction: row
@@ -37,10 +40,19 @@
 
 
     .title
-      padding: 0 0 0 2rem
+      flex: 1 0 auto
+
 
       @media (min-width: 35em)
-        // padding: 1rem 0
+        padding: 0 0 0 2rem
 
     .version
-      padding: 0 0 0 2rem
+      flex: 1
+      text-align: right
+
+
+      @media (min-width: 35em)
+        padding: 0 0 0 2rem
+
+    h4
+      font-size: 1.1rem
