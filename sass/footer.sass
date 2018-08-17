@@ -1,0 +1,39 @@
+footer
+  grid-area: footer
+  background-color: black
+
+  section
+    display: flex
+    flex-direction: column
+    padding: 1rem
+
+    @media (min-width: 35em)
+      width: 80%
+      margin: 0 auto
+
+  ul
+    display: flex
+    flex-direction: column
+    padding: 0
+    list-style: none
+
+    @media (min-width: 35em)
+      margin: 0 auto
+      flex-wrap: wrap
+      text-align: left
+
+  li
+    padding: .5rem 0
+    font-size: 1.1rem
+
+    @media (min-width: 35em)
+      padding: .5rem 1rem
+
+
+
+  a
+    color: white
+    transition: all .4s ease-in
+
+    &:hover
+      text-decoration: underline

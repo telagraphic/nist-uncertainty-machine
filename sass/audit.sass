@@ -1,6 +1,11 @@
+@mixin modular-scale($s-font, $l-font, $height-scale, $min-viewport, $max-viewport)
+  font-size: calc(#{$s-font}px + (#{$l-font} - #{$s-font}) * ((100vw - #{$min-viewport}px) / (#{$max-viewport} - #{$min-viewport})))
+  line-height: calc( #{$s-font * $height-scale}px + (#{$l-font * $height-scale} - #{$s-font * $height-scale}) * ((100vw - #{$min-viewport}px) / (#{$max-viewport} - #{$min-viewport})))
+
 body
   font-size: 100%
   font-family: "Source Sans Pro",Helvetica,Arial,sans-serif
+  @include modular-scale(25, 40, 1.2, 320, 2000)
 
 .audit-container
   display: grid
@@ -19,25 +24,40 @@ body
     max-width: 79%
     margin: 0 auto
 
+
+
     .content
       display: grid
-      grid-template: max-content max-content / 33% 66%
-      grid-template-areas: "header header" "ui ux"
+      grid-template: max-content max-content max-content / 33% 66%
+      grid-template-areas: "header header" "ui-points ui-notes" "ux ux"
 
     h2
       grid-area: header
 
-    .ui
-      grid-area: ui
+    img
+      padding: 2rem 0  
+
+
+    .ui-points, .ui-notes, .ux
+      // width: 89%
+      // margin: 0 auto
+      padding: 0 4rem 0 0
+
+
+    .ui-points
+      grid-area: ui-points
+
+    .ui-notes
+      grid-area: ui-notes
 
     .ux
       grid-area: ux
 
     h2, h3, h4
-      padding: 1rem 0 2rem 0
+      padding: 3rem 0 2rem 0
 
     ul
       padding: 0 0 2rem 0
 
     li
-      padding: .5rem 0
+      padding: 1rem 0
