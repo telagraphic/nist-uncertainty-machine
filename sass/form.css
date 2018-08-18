@@ -11,12 +11,31 @@ input[type="number"] {
   padding: 2rem 0;
 }
 
-.dropdown-content {
+.dropdown .dropdown-content {
   display: none;
 }
 
-#drop_zone {
-  margin-top: 80px;
+.dropdown:hover .dropdown-content {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  z-index: 1;
+  background-color: #f9f9f9;
+  min-width: 1rem;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown:hover .dropdown-content a {
+  padding: .5rem;
+  text-decoration: none;
+}
+
+.dropdown:hover .dropdown-content a:hover {
+  text-decoration: underline;
+}
+
+#load #drop_zone {
+  margin: 2rem 0;
   border: 2px dashed #bbb;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -28,4 +47,8 @@ input[type="number"] {
   color: #888;
   cursor: pointer;
   max-width: 500px;
+}
+
+#files {
+  display: none;
 }
