@@ -35,146 +35,149 @@
       </section>
     </header>
     <main>
-      <div class="content">
-        <div id="help">
-          <div id="instruction">
-            <br/>
-            User's manual available <a  href="./NISTUncertaintyMachine-UserManual.pdf"> here.</a>
-            <br/>
-            <div class="dropdown">
-              <a href="#" class="dropbtn">Load examples</a>
-              <div class="dropdown-content">
-                <a href="./?example=Gauge">Gauge</a>
-                <a href="./?example=Resistance">Resistance</a>
-                <a href="./?example=Stefan">Stefan</a>
-                <a href="./?example=Thermal">Thermal</a>
-                <a href="./?example=Viscosity">Viscosity</a>
-                <a href="./?example=Voltage">Voltage</a>
-                <a href="./?example=Allende">Allende</a>
-              </div>
-            </div>
-            <!-- Instructions :
-            <ul>
-              <li>Select the number of input quantities.</li>
-              <li>Change the quantity names if necessary.</li>
-              <li>For each input quantity choose its distribution and its parameters.</li>
-              <li>Choose the number of realizations.</li>
-              <li>Write the definition of the output quantity in a valid R expression.</li>
-              <li>Choose and set the correlations if necessary.</li>
-              <li>Run the computation.</li>
-            </ul> -->
-          </div>
-          <div id="load">
+      <section class="introduction">
+        <h2>Start Here</h2>
+        <p>
+          User's manual available <a href="./NISTUncertaintyMachine-UserManual.pdf"> here.</a>
+        </p>
+        <section class="dropdown">
+          <button href="#" class="dropbtn">Load examples</button>
+          <nav class="dropdown-content">
+            <a href="./?example=Gauge">Gauge</a>
+            <a href="./?example=Resistance">Resistance</a>
+            <a href="./?example=Stefan">Stefan</a>
+            <a href="./?example=Thermal">Thermal</a>
+            <a href="./?example=Viscosity">Viscosity</a>
+            <a href="./?example=Voltage">Voltage</a>
+            <a href="./?example=Allende">Allende</a>
+          </nav>
+        </section>
+        <!-- Instructions :
+        <ul>
+          <li>Select the number of input quantities.</li>
+          <li>Change the quantity names if necessary.</li>
+          <li>For each input quantity choose its distribution and its parameters.</li>
+          <li>Choose the number of realizations.</li>
+          <li>Write the definition of the output quantity in a valid R expression.</li>
+          <li>Choose and set the correlations if necessary.</li>
+          <li>Run the computation.</li>
+        </ul> -->
+        <section class="load">
+          <section id="drop_zone">Drop configuration file here or click to upload</section>
+          <input type='file' title="No file selected" id="files" onchange="pressed()"><label id="fileLabel"> </label>
+          <section class="reset">
+            <input id="reset" type="button" value="Reset" onClick="window.location.replace(location.pathname);">
+          </section>
+        </section>
+      </section>
+      <section class="form-container">
+        <form name="input" id="input"  method="POST" action="validation.php" target="_blank">
+          <fieldset class="inputs">
+            <h2>Select Inputs & Choose Distributions</h2>
+            <section class="">
+              <!-- <h3>Select the number of input quantities</h3> -->
 
-            <div id="drop_zone">Drop configuration file here or click to upload</div>
-            <input type='file' title="No file selected" id="files" onchange="pressed()"><label id="fileLabel"> </label>
-            <section class="reset">
-              <input id="reset" type="button" value="Reset" onClick="window.location.replace(location.pathname);">
+              <!-- <select id="inputs" name="inputs">
+                <option value="1" selected> 1</option>
+                <option value="2"> 2</option>
+                <option value="3"> 3</option>
+                <option value="4"> 4</option>
+                <option value="5"> 5</option>
+                <option value="6"> 6</option>
+                <option value="7"> 7</option>
+                <option value="8"> 8</option>
+                <option value="9"> 9</option>
+                <option value="10"> 10</option>
+                <option value="11"> 11</option>
+                <option value="12"> 12</option>
+                <option value="13"> 13</option>
+                <option value="14"> 14</option>
+                <option value="15"> 15</option>
+              </select> -->
             </section>
-          </div>
-        </div>
-        <div id="form">
-          <form name="input" id="input"  method="POST" action="validation.php" target="_blank">
-
-            <section class="step-1">
-              <section class="sub-step-1">
-                Select the number of input quantities:
-                <select id="inputs" name="inputs">
-                  <option value="1" selected> 1</option>
-                  <option value="2"> 2</option>
-                  <option value="3"> 3</option>
-                  <option value="4"> 4</option>
-                  <option value="5"> 5</option>
-                  <option value="6"> 6</option>
-                  <option value="7"> 7</option>
-                  <option value="8"> 8</option>
-                  <option value="9"> 9</option>
-                  <option value="10"> 10</option>
-                  <option value="11"> 11</option>
-                  <option value="12"> 12</option>
-                  <option value="13"> 13</option>
-                  <option value="14"> 14</option>
-                  <option value="15"> 15</option>
-                </select>
-
+            <section class="sub-step-2">
+              <!-- <h3>Add inputs, select distributions</h3> -->
+              <section>
+                <button class="add-input" value="1">+</button>
+                <input id="inputs" name="inputs" type="range" value="1" min="1" max="15"></input>
+                <button class="remove-input">-</button>
               </section>
-              <section class="sub-step-2">
-                <p>
-                  For each input quantity choose its distribution and its parameters.  Change the quantity names if necessary.
-                </p>
-                <table id="distributions">
-                </table>
-              </section>
-
+              <table id="distributions">
+              </table>
             </section>
-            <section class="step-2">
-              <div class="sub-step-1">
-                <p>
-                  Number of realizations of the output quantity:
-                </p>
-
-                <!-- <input name='nReal' id='nReal' type='text' value='1000000'> -->
-                <input name='nReal' id='nReal' type='number' value='1000000' max="5000000" required>
-              </div>
-              <div class="sub-step-2">
-                <p>
-                  Random number generator seed, selected at random on screen load or when reset button is pressed.
-                </p>
-                <input name='seed' id='seed' type='number' value='' size="4" max="100" required>
-                <!-- <input type="text" pattern="[0-9]*" maxlength="3"> -->
-              </div>
-            </section>
-            <section class="step-3">
+          </fieldset>
+          <fieldset class="correlations">
+            <h2>Set Corellations</h2>
+            <section class="sub-step2">
               <p>
-                Definition of output quantity (R expression): Write the definition of the output quantity in a valid R expression
+                Choose and set the correlations if necessary
               </p>
-              <div>
-                <button id='dec' type="button" onclick=removeOutput()>-</button>
-                <button id='inc' type="button" onclick=addOutput()>+</button>
-              </div>
-              <div id="container">
-                <textarea class='output'  name='output1' id='output1' height=51px></textarea>
-              </div>
-            </section>
-            <section class="step-4">
-              <div class="sub-step-1">
-                <label><input type="checkbox"  name="symmetrical" id="symmetrical" value="bar" /> Symmetrical coverage intervals</label>
-              </div>
-              <div class="sub-step2">
-                <p>
-                  Choose and set the correlations if necessary
-                </p>
-                <label><input type="checkbox"  name="correlation" id="correlation" value="bar" /> Correlations</label>
-                <div id='correlationClass'>
-                  <table id='correlationTable'>
-                  </table>
-                  <table >
-                    <tr>
-                      <td>
-                        <div id="copula">
-                        </div>
-                      </td>
-                      <td>
-                        <div id="copulaParam">
-                        </div>
-                      </td>
-                    </tr>
-                  </table>
-                </div>
+              <label><input type="checkbox"  name="correlation" id="correlation" value="bar" /> Correlations</label>
+              <div id='correlationClass'>
+                <table id='correlationTable'>
+                </table>
+                <table >
+                  <tr>
+                    <td>
+                      <div id="copula">
+                      </div>
+                    </td>
+                    <td>
+                      <div id="copulaParam">
+                      </div>
+                    </td>
+                  </tr>
+                </table>
               </div>
             </section>
-            <section class="step-5">
-              <input type="submit" value="Run the computation"/>
-              <input id="reset" type="button" value="Reset" onClick="window.location.replace(location.pathname);">
+
+          </fieldset>
+          <fieldset class="set-values">
+            <h2>Choose Values</h2>
+            <section class="sub-step-1">
+              <p>
+                Number of realizations of the output quantity:
+              </p>
+
+              <!-- <input name='nReal' id='nReal' type='text' value='1000000'> -->
+              <input name='nReal' id='nReal' type='number' value='1000000' max="5000000" required>
             </section>
-            <section class="step-6">
-              <div id="state"></div>
-              <span id='error'></span>
-              <span id='percent'></span>
+            <section class="sub-step-2">
+              <p>
+                Random number generator seed, selected at random on screen load or when reset button is pressed.
+              </p>
+              <input name='seed' id='seed' type='number' value='' size="4" max="100" required>
+              <!-- <input type="text" pattern="[0-9]*" maxlength="3"> -->
             </section>
-          </form>
-        </div>
-      </div>
+            <section class="sub-step-1">
+              <label><input type="checkbox"  name="symmetrical" id="symmetrical" value="bar" /> Symmetrical coverage intervals</label>
+            </section>
+          </fieldset>
+          <fieldset class="output-quantity">
+            <h2>Write the Definition of Output Quantity</h2>
+            <p>
+              Definition of output quantity (R expression): Write the definition of the output quantity in a valid R expression
+            </p>
+            <div>
+              <button id='dec' type="button" onclick=removeOutput()>-</button>
+              <button id='inc' type="button" onclick=addOutput()>+</button>
+            </div>
+            <div id="container">
+              <textarea class='output'  name='output1' id='output1' height=51px></textarea>
+            </div>
+          </fieldset>
+
+          <fieldset class="submit">
+            <input type="submit" value="Run the computation"/>
+            <input id="reset" type="button" value="Reset" onClick="window.location.replace(location.pathname);">
+          </fieldset>
+          <section class="step-6">
+            <div id="state"></div>
+            <span id='error'></span>
+            <span id='percent'></span>
+          </section>
+        </form>
+      </section>
     </main>
     <footer>
       <section>
@@ -242,6 +245,7 @@
 
     <script src="js/jquery.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/ui.js"></script>
   </body>
 
 </html>

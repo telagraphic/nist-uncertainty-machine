@@ -4,6 +4,7 @@ html, body {
 }
 
 body {
+  min-height: 100%;
   font-size: 100%;
   font-family: "Source Sans Pro",Helvetica,Arial,sans-seif;
 }
@@ -19,7 +20,6 @@ a {
 }
 
 .grid-container {
-  min-height: 100%;
   display: grid;
   grid-template-rows: 5% 85% 10%;
   grid-template-columns: 100%;

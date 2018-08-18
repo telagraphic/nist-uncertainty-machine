@@ -47,6 +47,7 @@ footer li {
 footer a {
   color: white;
   transition: all .4s ease-in;
+  text-decoration: none;
 }
 
 footer a:hover {

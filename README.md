@@ -51,9 +51,9 @@ Post Points
 
 - project copy and setup
 - review html, css and js
-- ui/ux audit
-- header redesign
+- clean up markup, grid layout, sticky footer
+- ui/ux audit, review audit page
+- header responsive redesign
 - footer ux changes
-- form
- - commenting js lines < 10 to unify names and distribution onto same line and R definition output text areas
- - ux analysis of steps involved, simplifying into smaller steps, removing bullets
+- commenting js lines < 10 to unify names and distribution onto same line and R definition output text areas
+- ux analysis of steps involved, simplifying into smaller steps, removing bullets

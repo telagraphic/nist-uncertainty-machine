@@ -1,3 +1,21 @@
+.introduction {
+  padding: 2rem 0;
+}
+
+form {
+  padding: 0;
+}
+
+form fieldset {
+  padding: 0rem 0;
+  -webkit-appearance: none;
+  border: none;
+}
+
+form h2 {
+  padding: 1.5rem 0 1rem 0;
+}
+
 input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
@@ -51,4 +69,21 @@ input[type="number"] {
 
 #files {
   display: none;
+}
+
+.set-values section {
+  padding: .5rem 0;
+}
+
+.correlationClass #correlationTable {
+  width: 100%;
+}
+
+.correlationClass #correlationTable td {
+  max-width: 100%;
+}
+
+.correlationClass #correlationTable input[type="text"] {
+  width: 100%;
+  background-color: blue;
 }
