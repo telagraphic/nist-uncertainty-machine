@@ -85,6 +85,31 @@ if (exampleFile!=undefined)
 }
 
 
+function addInput() {
+	newInputNb=parseInt($('#inputs').val());
+	for (var i=inputNb;i<newInputNb;i++)
+	{
+		var toInsert="<input type='text' oninput='updateNames()' maxlength='20' class='nameField'  value=x"+(i)+" id='name"+(i)+"' name='name"+(i)+"' > ";
+		// $('#nameList').append($(toInsert));
+		$("#distributions tr#distrib"+(i)).append($(toInsert));
+	}
+
+	for (var i=inputNb;i>=newInputNb;i--)
+	{
+			$("#name"+(i)).remove();
+	}
+	updateNames();
+
+	plotDistribLine();
+	if($('#correlation').prop('checked')==true)
+	plotCorrelationTable();
+
+}
+
+function removeInput() {
+
+}
+
 
 function changeNumberInput(){
 	newInputNb=parseInt($('#inputs').val());

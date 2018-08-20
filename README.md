@@ -57,3 +57,4 @@ Post Points
 - footer ux changes
 - commenting js lines < 10 to unify names and distribution onto same line and R definition output text areas
 - ux analysis of steps involved, simplifying into smaller steps, removing bullets
+- svg use viewBox=0 0 height width values for code to work, list two sites that you used to help this

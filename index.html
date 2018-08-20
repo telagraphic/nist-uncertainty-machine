@@ -26,11 +26,19 @@
   <body>
 
     <header>
-      <a href="https://www.nist.gov/" title="National Institute of Standards and Technology" class="nist-header__logo-link" rel="home">
-        <img src="nist-logo.svg" alt="NIST Logo">
-      </a>
-      <section>
-        <h4 class="title" onClick="window.location.replace('./index.php');">Uncertainty Machine</h4>
+      <section class="logo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 645 170" width="645" height="170" version="1">
+          <style>.a{fill-opacity:1;fill-rule:nonzero;fill:white;opacity:1;stroke-dasharray:none;stroke-dashoffset:0;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-width:8;stroke:none;}</style>
+          <defs/>
+          <metadata/>
+          <g>
+            <path d="M45 0.2C20.2 0.2 0 20.4 0 45.2L0.3 170.2 40.3 170.2 40 87.1 40 45.2C40 42.6 42 40.5 44.5 40.2 44.7 40.2 44.8 40.2 45 40.2 46.4 40.2 47.6 40.8 48.5 41.7L153.5 156.8C161.6 165 172.9 170 185.3 170 210.1 170 230.3 149.8 230.3 125L230.3 0 190.3 0 190.3 80.3 190.3 125C190.3 125.1 190.3 125.1 190.3 125.2 190.2 127.9 188 130 185.3 130 183.9 130 182.7 129.4 181.8 128.5L76.8 13.4C68.7 5.3 57.4 0.2 45 0.2z" class="a"/>
+            <path d="M250.3 0L250.3 125C250.3 149.8 270.4 170 295.3 170L465.3 170C493.1 168.7 515.3 145.7 515.3 117.6 515.3 89.5 493.1 66.5 465.3 65.2L465.3 65 355.3 65C349.7 64.7 345.3 59.2 345.3 52.5 345.3 45.8 349.7 40.3 355.3 40L535.3 40 535.3 170 575.3 170 575.3 40 645.3 40 645.3 0 355.3 0 355.3 0.2C327.5 1.5 305.3 24.5 305.3 52.6 305.3 80.7 327.5 103.7 355.3 105L465.3 105C470.8 105.3 475.3 110.8 475.3 117.5 475.3 124.2 470.8 129.7 465.3 130L340 130 295.3 130C292.5 130 290.3 127.8 290.3 125L290.3 80.3 290.3 0 250.3 0z" class="a"/>
+          </g>
+        </svg>
+      </section>
+      <section class="title">
+        <h4 class="name" onClick="window.location.replace('./index.php');">Uncertainty Machine</h4>
         <h4 class="version" onClick="window.location.replace('./verification.php');">v1.3.5</h4>
       </section>
     </header>
@@ -98,9 +106,9 @@
             <section class="sub-step-2">
               <!-- <h3>Add inputs, select distributions</h3> -->
               <section>
-                <button class="add-input" value="1">+</button>
+                <button class="add-input"  onclick="" value="1">+</button>
                 <input id="inputs" name="inputs" type="range" value="1" min="1" max="15"></input>
-                <button class="remove-input">-</button>
+                <button class="remove-input" onclick="">-</button>
               </section>
               <table id="distributions">
               </table>
@@ -183,61 +191,95 @@
       <section>
         <ul>
           <li>
-            <a href="https://www.nist.gov/privacy-policy">Privacy Statement</a>
+            <a href="https://www.nist.gov/privacy-policy">
+              Privacy Statement
+            </a>
           </li>
           <li>
-            <a href="https://www.nist.gov/privacy-policy#privpolicy">Privacy Policy</a>
+            <a href="https://www.nist.gov/privacy-policy#privpolicy">
+              Privacy Policy
+            </a>
           </li>
           <li>
-            <a href="https://www.nist.gov/privacy-policy#secnot">Security Notice</a>
+            <a href="https://www.nist.gov/privacy-policy#secnot">
+              Security Notice
+            </a>
           </li>
           <li>
-            <a href="https://www.nist.gov/privacy-policy#accesstate">Accessibility Statement</a>
+            <a href="https://www.nist.gov/privacy-policy#accesstate">
+              Accessibility Statement
+            </a>
           </li>
           <li>
-            <a href="https://www.nist.gov/privacy">NIST Privacy Program</a>
+            <a href="https://www.nist.gov/privacy">
+              NIST Privacy Program
+            </a>
           </li>
         </ul>
         <ul>
           <li>
-            <a href="https://www.nist.gov/no-fear-act-policy">No Fear Act Policy</a>
+            <a href="https://www.nist.gov/no-fear-act-policy">
+              No Fear Act Policy<
+              /a>
           </li>
           <li>
-            <a href="https://www.nist.gov/disclaimer">Disclaimer</a>
+            <a href="https://www.nist.gov/disclaimer">
+              Disclaimer
+            </a>
           </li>
           <li>
-            <a href="https://www.nist.gov/office-director/freedom-information-act">FOIA</a>
+            <a href="https://www.nist.gov/office-director/freedom-information-act">
+              FOIA
+            </a>
           </li>
           <li>
-            <a href="https://www.nist.gov/environmental-policy-statement">Environmental Policy Statement</a>
+            <a href="https://www.nist.gov/environmental-policy-statement">
+              Environmental Policy Statement
+            </a>
           </li>
           <li>
-            <a href="https://www.nist.gov/privacy-policy#cookie">Cookie Disclaimer</a>
-          </li>
-        </ul>
-        <ul>
-          <li class="nist-footer__menu-item ">
-            <a href="https://www.nist.gov/summary-report-scientific-integrity">Scientific Integrity Summary</a>
-          </li>
-          <li class="nist-footer__menu-item ">
-            <a href="https://www.nist.gov/nist-information-quality-standards">NIST Information Quality Standards</a>
-          </li>
-          <li>
-            <a href="https://business.usa.gov/">Business USA</a>
-          </li>
-          <li>
-            <a href="https://www.commerce.gov/">Commerce.gov</a>
-          </li>
-          <li>
-            <a href="https://www.healthcare.gov/">Healthcare.gov</a>
+            <a href="https://www.nist.gov/privacy-policy#cookie">
+              Cookie Disclaimer
+            </a>
           </li>
         </ul>
         <ul>
           <li>
-            <a href="http://www.science.gov/">Science.gov</a>
+            <a href="https://www.nist.gov/summary-report-scientific-integrity">
+              Scientific Integrity Summary
+            </a>
           </li>
           <li>
-            <a href="http://www.usa.gov/">USA.gov</a>
+            <a href="https://www.nist.gov/nist-information-quality-standards">
+              NIST Information Quality Standards
+            </a>
+          </li>
+          <li>
+            <a href="https://business.usa.gov/">
+              Business USA
+            </a>
+          </li>
+          <li>
+            <a href="https://www.commerce.gov/">
+              Commerce.gov
+            </a>
+          </li>
+          <li>
+            <a href="https://www.healthcare.gov/">
+              Healthcare.gov
+            </a>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <a href="http://www.science.gov/">
+              Science.gov
+            </a>
+          </li>
+          <li>
+            <a href="http://www.usa.gov/">
+              USA.gov
+            </a>
           </li>
         </ul>
       </section>
