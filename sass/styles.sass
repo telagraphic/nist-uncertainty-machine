@@ -5,6 +5,11 @@ html, body
 body
   min-height: 100%
 
+  display: grid
+  grid-template-rows: auto 1fr auto
+  grid-template-columns: 100%
+  grid-template-areas: "header" "content" "footer"
+
   font-size: 100%
   font-family: "Source Sans Pro",Helvetica,Arial,sans-seif
 
@@ -14,25 +19,13 @@ body
 a
   text-decoration: none
 
-.grid-container
-  display: grid
-  grid-template-rows: 5% 85% 10%
-  grid-template-columns: 100%
-  grid-template-areas: "header" "content" "footer"
-
-
-
 header
-  grid-area: header
 
 main
   grid-area: content
-
 
   @media (min-width: 35em)
     width: 65%
     margin: 0 auto
 
-
 footer
-  grid-area: footer

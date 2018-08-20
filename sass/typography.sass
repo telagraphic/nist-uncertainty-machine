@@ -3,7 +3,11 @@
   line-height: calc( #{$s-font * $height-scale}px + (#{$l-font * $height-scale} - #{$s-font * $height-scale}) * ((100vw - #{$min-viewport}px) / (#{$max-viewport} - #{$min-viewport})))
 
 h4
-  @include modular-scale(25, 50, 1.2, 320, 2000)
+  @include modular-scale(22, 44, 1.2, 320, 2000)
+
+
+svg
+  width: @include modular-scale(22, 44, 1.2, 320, 2000)
 
 
 a

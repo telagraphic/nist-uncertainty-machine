@@ -5,57 +5,57 @@ header
   grid-template-rows: max-content
   grid-template-areas: "logo" "title"
 
+  width: 100%
+
   background-color: black
   color: white
   padding: 1rem
 
   @media (min-width: 35em)
-    grid-template-columns: 15% 85%
-    grid-template-areas: "logo title"
+    grid-template-rows: auto auto
+    grid-template-columns: auto 65% auto
+    grid-template-areas: "logo" "title"
     align-items: center
+    margin: 0 auto
 
     padding: 1.5rem
 
 
   .logo
     grid-area: logo
-    width: 100%
-    // display: flex
-    // justify-content: center
-    // padding: 0
+    width: 55vw
+    max-width: calc(200px + (300 - 200) * ((100vw - 320px) / (2000 - 320)))
 
-    img
-      width: 100%
+    @media (min-width: 35em)
+      // width: 30rem
+      // max-width: 25vw
+
 
     svg
       width: 100%
+      max-width: 100%
+
 
   .title
     grid-area: title
     display: flex
-    flex-direction: row
+    flex-direction: column
     text-align: left
     padding: 1rem 0 0 0
 
     @media (min-width: 35em)
-      flex-direction: row
+      flex-direction: column
       text-align: left
 
 
     .name
-      flex: 1 0 auto
-
 
       @media (min-width: 35em)
-        padding: 0 0 0 2rem
+        padding: 0 0 0 0
 
     .version
-      flex: 1
-      text-align: right
-
 
       @media (min-width: 35em)
-        padding: 0 0 0 2rem
+        padding: 0
 
     h4
-      font-size: 1.1rem

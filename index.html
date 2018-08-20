@@ -26,22 +26,27 @@
   <body>
 
     <header>
-      <section class="logo">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 645 170" width="645" height="170" version="1">
-          <style>.a{fill-opacity:1;fill-rule:nonzero;fill:white;opacity:1;stroke-dasharray:none;stroke-dashoffset:0;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-width:8;stroke:none;}</style>
-          <defs/>
-          <metadata/>
-          <g>
-            <path d="M45 0.2C20.2 0.2 0 20.4 0 45.2L0.3 170.2 40.3 170.2 40 87.1 40 45.2C40 42.6 42 40.5 44.5 40.2 44.7 40.2 44.8 40.2 45 40.2 46.4 40.2 47.6 40.8 48.5 41.7L153.5 156.8C161.6 165 172.9 170 185.3 170 210.1 170 230.3 149.8 230.3 125L230.3 0 190.3 0 190.3 80.3 190.3 125C190.3 125.1 190.3 125.1 190.3 125.2 190.2 127.9 188 130 185.3 130 183.9 130 182.7 129.4 181.8 128.5L76.8 13.4C68.7 5.3 57.4 0.2 45 0.2z" class="a"/>
-            <path d="M250.3 0L250.3 125C250.3 149.8 270.4 170 295.3 170L465.3 170C493.1 168.7 515.3 145.7 515.3 117.6 515.3 89.5 493.1 66.5 465.3 65.2L465.3 65 355.3 65C349.7 64.7 345.3 59.2 345.3 52.5 345.3 45.8 349.7 40.3 355.3 40L535.3 40 535.3 170 575.3 170 575.3 40 645.3 40 645.3 0 355.3 0 355.3 0.2C327.5 1.5 305.3 24.5 305.3 52.6 305.3 80.7 327.5 103.7 355.3 105L465.3 105C470.8 105.3 475.3 110.8 475.3 117.5 475.3 124.2 470.8 129.7 465.3 130L340 130 295.3 130C292.5 130 290.3 127.8 290.3 125L290.3 80.3 290.3 0 250.3 0z" class="a"/>
-          </g>
-        </svg>
+      <section></section>
+      <section>
+        <section class="logo">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 645 170" version="1">
+            <style>.a{fill-opacity:1;fill-rule:nonzero;fill:white;opacity:1;stroke-dasharray:none;stroke-dashoffset:0;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-width:8;stroke:none;}</style>
+            <defs/>
+            <metadata/>
+            <g>
+              <path d="M45 0.2C20.2 0.2 0 20.4 0 45.2L0.3 170.2 40.3 170.2 40 87.1 40 45.2C40 42.6 42 40.5 44.5 40.2 44.7 40.2 44.8 40.2 45 40.2 46.4 40.2 47.6 40.8 48.5 41.7L153.5 156.8C161.6 165 172.9 170 185.3 170 210.1 170 230.3 149.8 230.3 125L230.3 0 190.3 0 190.3 80.3 190.3 125C190.3 125.1 190.3 125.1 190.3 125.2 190.2 127.9 188 130 185.3 130 183.9 130 182.7 129.4 181.8 128.5L76.8 13.4C68.7 5.3 57.4 0.2 45 0.2z" class="a"/>
+              <path d="M250.3 0L250.3 125C250.3 149.8 270.4 170 295.3 170L465.3 170C493.1 168.7 515.3 145.7 515.3 117.6 515.3 89.5 493.1 66.5 465.3 65.2L465.3 65 355.3 65C349.7 64.7 345.3 59.2 345.3 52.5 345.3 45.8 349.7 40.3 355.3 40L535.3 40 535.3 170 575.3 170 575.3 40 645.3 40 645.3 0 355.3 0 355.3 0.2C327.5 1.5 305.3 24.5 305.3 52.6 305.3 80.7 327.5 103.7 355.3 105L465.3 105C470.8 105.3 475.3 110.8 475.3 117.5 475.3 124.2 470.8 129.7 465.3 130L340 130 295.3 130C292.5 130 290.3 127.8 290.3 125L290.3 80.3 290.3 0 250.3 0z" class="a"/>
+            </g>
+          </svg>
+        </section>
+        <section class="title">
+          <h4 class="name" onClick="window.location.replace('./index.php');">Uncertainty Machine</h4>
+          <h4 class="version" onClick="window.location.replace('./verification.php');">v1.3.5</h4>
+        </section>
       </section>
-      <section class="title">
-        <h4 class="name" onClick="window.location.replace('./index.php');">Uncertainty Machine</h4>
-        <h4 class="version" onClick="window.location.replace('./verification.php');">v1.3.5</h4>
-      </section>
+      <section></section>
     </header>
+
     <main>
       <section class="introduction">
         <h2>Start Here</h2>
@@ -61,15 +66,15 @@
           </nav>
         </section>
         <!-- Instructions :
-        <ul>
-          <li>Select the number of input quantities.</li>
-          <li>Change the quantity names if necessary.</li>
-          <li>For each input quantity choose its distribution and its parameters.</li>
-          <li>Choose the number of realizations.</li>
-          <li>Write the definition of the output quantity in a valid R expression.</li>
-          <li>Choose and set the correlations if necessary.</li>
-          <li>Run the computation.</li>
-        </ul> -->
+          <ul>
+            <li>Select the number of input quantities.</li>
+            <li>Change the quantity names if necessary.</li>
+            <li>For each input quantity choose its distribution and its parameters.</li>
+            <li>Choose the number of realizations.</li>
+            <li>Write the definition of the output quantity in a valid R expression.</li>
+            <li>Choose and set the correlations if necessary.</li>
+            <li>Run the computation.</li>
+          </ul> -->
         <section class="load">
           <section id="drop_zone">Drop configuration file here or click to upload</section>
           <input type='file' title="No file selected" id="files" onchange="pressed()"><label id="fileLabel"> </label>
@@ -84,7 +89,6 @@
             <h2>Select Inputs & Choose Distributions</h2>
             <section class="">
               <!-- <h3>Select the number of input quantities</h3> -->
-
               <!-- <select id="inputs" name="inputs">
                 <option value="1" selected> 1</option>
                 <option value="2"> 2</option>
@@ -101,7 +105,7 @@
                 <option value="13"> 13</option>
                 <option value="14"> 14</option>
                 <option value="15"> 15</option>
-              </select> -->
+                </select> -->
             </section>
             <section class="sub-step-2">
               <!-- <h3>Add inputs, select distributions</h3> -->
@@ -138,7 +142,6 @@
                 </table>
               </div>
             </section>
-
           </fieldset>
           <fieldset class="set-values">
             <h2>Choose Values</h2>
@@ -146,7 +149,6 @@
               <p>
                 Number of realizations of the output quantity:
               </p>
-
               <!-- <input name='nReal' id='nReal' type='text' value='1000000'> -->
               <input name='nReal' id='nReal' type='number' value='1000000' max="5000000" required>
             </section>
@@ -174,7 +176,6 @@
               <textarea class='output'  name='output1' id='output1' height=51px></textarea>
             </div>
           </fieldset>
-
           <fieldset class="submit">
             <input type="submit" value="Run the computation"/>
             <input id="reset" type="button" value="Reset" onClick="window.location.replace(location.pathname);">
@@ -187,6 +188,7 @@
         </form>
       </section>
     </main>
+
     <footer>
       <section>
         <ul>
@@ -284,7 +286,6 @@
         </ul>
       </section>
     </footer>
-
     <script src="js/jquery.js"></script>
     <script src="js/script.js"></script>
     <script src="js/ui.js"></script>

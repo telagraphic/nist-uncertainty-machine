@@ -1,6 +1,6 @@
 h4 {
-  font-size: calc(25px + (50 - 25) * ((100vw - 320px) / (2000 - 320)));
-  line-height: calc( 30px + (60 - 30) * ((100vw - 320px) / (2000 - 320)));
+  font-size: calc(22px + (44 - 22) * ((100vw - 320px) / (2000 - 320)));
+  line-height: calc( 26.4px + (52.8 - 26.4) * ((100vw - 320px) / (2000 - 320)));
 }
 
 a {
