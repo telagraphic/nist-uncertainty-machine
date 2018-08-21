@@ -1,4 +1,4 @@
-header {
+header.main-header {
   grid-area: header;
   display: grid;
   grid-template-columns: auto;
@@ -11,7 +11,7 @@ header {
 }
 
 @media (min-width: 35em) {
-  header {
+  header.main-header {
     grid-template-rows: auto auto;
     grid-template-columns: auto 65% auto;
     grid-template-areas: "logo" "title";
@@ -21,17 +21,17 @@ header {
   }
 }
 
-header .logo {
+header.main-header .logo {
   grid-area: logo;
   max-width: calc(50px + (75 - 50) * ((100vw - 320px) / (2000 - 320)));
 }
 
-header .logo svg {
+header.main-header .logo svg {
   width: 100%;
   max-width: 100%;
 }
 
-header .title {
+header.main-header .title {
   grid-area: title;
   display: flex;
   flex-direction: column;
@@ -40,7 +40,7 @@ header .title {
 }
 
 @media (min-width: 35em) {
-  header .title {
+  header.main-header .title {
     flex-direction: column;
     text-align: left;
     padding: .5rem 0;
@@ -48,18 +48,18 @@ header .title {
 }
 
 @media (min-width: 35em) {
-  header .title .name {
+  header.main-header .title .name {
     padding: 0 0 0 0;
   }
 }
 
 @media (min-width: 35em) {
-  header .title .version {
+  header.main-header .title .version {
     padding: 0;
   }
 }
 
-header .title h4 {
+header.main-header .title h4 {
   font-size: calc(22px + (44 - 22) * ((100vw - 320px) / (2000 - 320)));
   line-height: calc( 26.4px + (52.8 - 26.4) * ((100vw - 320px) / (2000 - 320)));
 }

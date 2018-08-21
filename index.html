@@ -25,19 +25,21 @@
   </head>
   <body>
 
-    <header>
+    <header class="main-header">
       <section></section>
       <section>
         <section class="logo">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 645 170" version="1">
-            <style>.a{fill-opacity:1;fill-rule:nonzero;fill:white;opacity:1;stroke-dasharray:none;stroke-dashoffset:0;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-width:8;stroke:none;}</style>
-            <defs/>
-            <metadata/>
-            <g>
-              <path d="M45 0.2C20.2 0.2 0 20.4 0 45.2L0.3 170.2 40.3 170.2 40 87.1 40 45.2C40 42.6 42 40.5 44.5 40.2 44.7 40.2 44.8 40.2 45 40.2 46.4 40.2 47.6 40.8 48.5 41.7L153.5 156.8C161.6 165 172.9 170 185.3 170 210.1 170 230.3 149.8 230.3 125L230.3 0 190.3 0 190.3 80.3 190.3 125C190.3 125.1 190.3 125.1 190.3 125.2 190.2 127.9 188 130 185.3 130 183.9 130 182.7 129.4 181.8 128.5L76.8 13.4C68.7 5.3 57.4 0.2 45 0.2z" class="a"/>
-              <path d="M250.3 0L250.3 125C250.3 149.8 270.4 170 295.3 170L465.3 170C493.1 168.7 515.3 145.7 515.3 117.6 515.3 89.5 493.1 66.5 465.3 65.2L465.3 65 355.3 65C349.7 64.7 345.3 59.2 345.3 52.5 345.3 45.8 349.7 40.3 355.3 40L535.3 40 535.3 170 575.3 170 575.3 40 645.3 40 645.3 0 355.3 0 355.3 0.2C327.5 1.5 305.3 24.5 305.3 52.6 305.3 80.7 327.5 103.7 355.3 105L465.3 105C470.8 105.3 475.3 110.8 475.3 117.5 475.3 124.2 470.8 129.7 465.3 130L340 130 295.3 130C292.5 130 290.3 127.8 290.3 125L290.3 80.3 290.3 0 250.3 0z" class="a"/>
-            </g>
-          </svg>
+          <a href="https://www.nist.gov/">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 645 170" version="1">
+              <style>.a{fill-opacity:1;fill-rule:nonzero;fill:white;opacity:1;stroke-dasharray:none;stroke-dashoffset:0;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-width:8;stroke:none;}</style>
+              <defs/>
+              <metadata/>
+              <g>
+                <path d="M45 0.2C20.2 0.2 0 20.4 0 45.2L0.3 170.2 40.3 170.2 40 87.1 40 45.2C40 42.6 42 40.5 44.5 40.2 44.7 40.2 44.8 40.2 45 40.2 46.4 40.2 47.6 40.8 48.5 41.7L153.5 156.8C161.6 165 172.9 170 185.3 170 210.1 170 230.3 149.8 230.3 125L230.3 0 190.3 0 190.3 80.3 190.3 125C190.3 125.1 190.3 125.1 190.3 125.2 190.2 127.9 188 130 185.3 130 183.9 130 182.7 129.4 181.8 128.5L76.8 13.4C68.7 5.3 57.4 0.2 45 0.2z" class="a"/>
+                <path d="M250.3 0L250.3 125C250.3 149.8 270.4 170 295.3 170L465.3 170C493.1 168.7 515.3 145.7 515.3 117.6 515.3 89.5 493.1 66.5 465.3 65.2L465.3 65 355.3 65C349.7 64.7 345.3 59.2 345.3 52.5 345.3 45.8 349.7 40.3 355.3 40L535.3 40 535.3 170 575.3 170 575.3 40 645.3 40 645.3 0 355.3 0 355.3 0.2C327.5 1.5 305.3 24.5 305.3 52.6 305.3 80.7 327.5 103.7 355.3 105L465.3 105C470.8 105.3 475.3 110.8 475.3 117.5 475.3 124.2 470.8 129.7 465.3 130L340 130 295.3 130C292.5 130 290.3 127.8 290.3 125L290.3 80.3 290.3 0 250.3 0z" class="a"/>
+              </g>
+            </svg>
+          </a>
         </section>
         <section class="title">
           <h4 class="name" onClick="window.location.replace('./index.php');">Uncertainty Machine</h4>
@@ -49,10 +51,12 @@
 
     <main>
       <section class="introduction">
-        <h2>Start Here</h2>
-        <p>
-          User's manual available <a href="./NISTUncertaintyMachine-UserManual.pdf"> here.</a>
-        </p>
+        <header class="intro-header">
+          <h2>Introduction</h2>
+          <p>
+            User's manual available <a href="./NISTUncertaintyMachine-UserManual.pdf"> here.</a>
+          </p>
+        </header>
         <section class="dropdown">
           <button href="#" class="dropbtn">Load examples</button>
           <nav class="dropdown-content">
@@ -65,25 +69,15 @@
             <a href="./?example=Allende">Allende</a>
           </nav>
         </section>
-        <!-- Instructions :
-          <ul>
-            <li>Select the number of input quantities.</li>
-            <li>Change the quantity names if necessary.</li>
-            <li>For each input quantity choose its distribution and its parameters.</li>
-            <li>Choose the number of realizations.</li>
-            <li>Write the definition of the output quantity in a valid R expression.</li>
-            <li>Choose and set the correlations if necessary.</li>
-            <li>Run the computation.</li>
-          </ul> -->
         <section class="load">
           <section id="drop_zone">Drop configuration file here or click to upload</section>
           <input type='file' title="No file selected" id="files" onchange="pressed()"><label id="fileLabel"> </label>
-          <section class="reset">
-            <input id="reset" type="button" value="Reset" onClick="window.location.replace(location.pathname);">
-          </section>
         </section>
       </section>
       <section class="form-container">
+        <section class="reset">
+          <input id="reset" type="button" value="Reset" onClick="window.location.replace(location.pathname);">
+        </section>
         <form name="input" id="input"  method="POST" action="validation.php" target="_blank">
           <fieldset class="inputs">
             <h2>Select Inputs & Choose Distributions</h2>
@@ -178,14 +172,16 @@
           </fieldset>
           <fieldset class="submit">
             <input type="submit" value="Run the computation"/>
-            <input id="reset" type="button" value="Reset" onClick="window.location.replace(location.pathname);">
           </fieldset>
-          <section class="step-6">
-            <div id="state"></div>
-            <span id='error'></span>
-            <span id='percent'></span>
-          </section>
         </form>
+        <section class="miscellaneous-elements">
+          <div id="state"></div>
+          <span id='error'></span>
+          <span id='percent'></span>
+        </section>
+        <section class="reset">
+          <input id="reset" type="button" value="Reset" onClick="window.location.replace(location.pathname);">
+        </section>
       </section>
     </main>
 
@@ -221,8 +217,8 @@
         <ul>
           <li>
             <a href="https://www.nist.gov/no-fear-act-policy">
-              No Fear Act Policy<
-              /a>
+              No Fear Act Policy
+            </a>
           </li>
           <li>
             <a href="https://www.nist.gov/disclaimer">
