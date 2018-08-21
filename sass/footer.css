@@ -11,14 +11,16 @@ footer section {
 
 @media (min-width: 35em) {
   footer section {
-    width: 80%;
+    width: 65%;
     margin: 0 auto;
     flex-direction: row;
+    padding: 0;
   }
 }
 
 footer ul {
   display: flex;
+  flex: 1 0 auto;
   flex-direction: column;
   padding: 0;
   list-style: none;
@@ -27,7 +29,6 @@ footer ul {
 @media (min-width: 35em) {
   footer ul {
     flex-direction: column;
-    margin: 0 auto;
     flex-wrap: wrap;
     text-align: left;
   }
@@ -36,12 +37,6 @@ footer ul {
 footer li {
   padding: .5rem 0;
   font-size: 1.1rem;
-}
-
-@media (min-width: 35em) {
-  footer li {
-    padding: .5rem 1rem;
-  }
 }
 
 footer a {

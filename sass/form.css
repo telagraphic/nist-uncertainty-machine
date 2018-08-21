@@ -6,6 +6,10 @@ header.intro-header {
   background-color: none;
 }
 
+.form-container {
+  padding: 2rem 0;
+}
+
 form {
   padding: 0;
 }
@@ -16,7 +20,7 @@ form fieldset {
   border: none;
 }
 
-form h2 {
+form h2, form h3, form h4 {
   padding: 1.5rem 0 1rem 0;
 }
 

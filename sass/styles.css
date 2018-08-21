@@ -25,11 +25,13 @@ a {
 
 main {
   grid-area: content;
+  padding: 1rem;
 }
 
 @media (min-width: 35em) {
   main {
     width: 65%;
     margin: 0 auto;
+    padding: 0;
   }
 }

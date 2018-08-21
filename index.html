@@ -42,8 +42,8 @@
           </a>
         </section>
         <section class="title">
-          <h4 class="name" onClick="window.location.replace('./index.php');">Uncertainty Machine</h4>
-          <h4 class="version" onClick="window.location.replace('./verification.php');">v1.3.5</h4>
+          <h1 class="name" onClick="window.location.replace('./index.php');">Uncertainty Machine</h4>
+          <h2 class="version" onClick="window.location.replace('./verification.php');">v1.3.5</h4>
         </section>
       </section>
       <section></section>
@@ -82,27 +82,6 @@
           <fieldset class="inputs">
             <h2>Select Inputs & Choose Distributions</h2>
             <section class="">
-              <!-- <h3>Select the number of input quantities</h3> -->
-              <!-- <select id="inputs" name="inputs">
-                <option value="1" selected> 1</option>
-                <option value="2"> 2</option>
-                <option value="3"> 3</option>
-                <option value="4"> 4</option>
-                <option value="5"> 5</option>
-                <option value="6"> 6</option>
-                <option value="7"> 7</option>
-                <option value="8"> 8</option>
-                <option value="9"> 9</option>
-                <option value="10"> 10</option>
-                <option value="11"> 11</option>
-                <option value="12"> 12</option>
-                <option value="13"> 13</option>
-                <option value="14"> 14</option>
-                <option value="15"> 15</option>
-                </select> -->
-            </section>
-            <section class="sub-step-2">
-              <!-- <h3>Add inputs, select distributions</h3> -->
               <section>
                 <button class="add-input"  onclick="" value="1">+</button>
                 <input id="inputs" name="inputs" type="range" value="1" min="1" max="15"></input>
@@ -113,7 +92,7 @@
             </section>
           </fieldset>
           <fieldset class="correlations">
-            <h2>Set Corellations</h2>
+            <h3>Set Corellations</h3>
             <section class="sub-step2">
               <p>
                 Choose and set the correlations if necessary
@@ -139,21 +118,21 @@
           </fieldset>
           <fieldset class="set-values">
             <h2>Choose Values</h2>
-            <section class="sub-step-1">
+            <section class="realizations">
               <p>
                 Number of realizations of the output quantity:
               </p>
               <!-- <input name='nReal' id='nReal' type='text' value='1000000'> -->
               <input name='nReal' id='nReal' type='number' value='1000000' max="5000000" required>
             </section>
-            <section class="sub-step-2">
+            <section class="random-seed">
               <p>
                 Random number generator seed, selected at random on screen load or when reset button is pressed.
               </p>
               <input name='seed' id='seed' type='number' value='' size="4" max="100" required>
               <!-- <input type="text" pattern="[0-9]*" maxlength="3"> -->
             </section>
-            <section class="sub-step-1">
+            <section class="symmetrical">
               <label><input type="checkbox"  name="symmetrical" id="symmetrical" value="bar" /> Symmetrical coverage intervals</label>
             </section>
           </fieldset>
@@ -162,23 +141,23 @@
             <p>
               Definition of output quantity (R expression): Write the definition of the output quantity in a valid R expression
             </p>
-            <div>
+            <section>
               <button id='dec' type="button" onclick=removeOutput()>-</button>
               <button id='inc' type="button" onclick=addOutput()>+</button>
             </div>
-            <div id="container">
+            <section id="container">
               <textarea class='output'  name='output1' id='output1' height=51px></textarea>
-            </div>
+            </section>
           </fieldset>
           <fieldset class="submit">
             <input type="submit" value="Run the computation"/>
           </fieldset>
         </form>
-        <section class="miscellaneous-elements">
+        <!-- <section class="miscellaneous-elements">
           <div id="state"></div>
           <span id='error'></span>
           <span id='percent'></span>
-        </section>
+        </section> -->
         <section class="reset">
           <input id="reset" type="button" value="Reset" onClick="window.location.replace(location.pathname);">
         </section>

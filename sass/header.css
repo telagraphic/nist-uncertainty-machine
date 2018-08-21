@@ -17,7 +17,7 @@ header.main-header {
     grid-template-areas: "logo" "title";
     align-items: center;
     margin: 0 auto;
-    padding: 1.5rem;
+    padding: 1.5rem 0;
   }
 }
 
@@ -41,7 +41,8 @@ header.main-header .title {
 
 @media (min-width: 35em) {
   header.main-header .title {
-    flex-direction: column;
+    flex-direction: row;
+    align-items: baseline;
     text-align: left;
     padding: .5rem 0;
   }
@@ -55,7 +56,7 @@ header.main-header .title {
 
 @media (min-width: 35em) {
   header.main-header .title .version {
-    padding: 0;
+    padding: 0 0 0 2rem;
   }
 }
 
