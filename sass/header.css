@@ -23,8 +23,7 @@ header {
 
 header .logo {
   grid-area: logo;
-  width: 55vw;
-  max-width: calc(200px + (300 - 200) * ((100vw - 320px) / (2000 - 320)));
+  max-width: calc(50px + (75 - 50) * ((100vw - 320px) / (2000 - 320)));
 }
 
 header .logo svg {
@@ -37,13 +36,14 @@ header .title {
   display: flex;
   flex-direction: column;
   text-align: left;
-  padding: 1rem 0 0 0;
+  padding: 0;
 }
 
 @media (min-width: 35em) {
   header .title {
     flex-direction: column;
     text-align: left;
+    padding: .5rem 0;
   }
 }
 
@@ -57,4 +57,9 @@ header .title {
   header .title .version {
     padding: 0;
   }
+}
+
+header .title h4 {
+  font-size: calc(22px + (44 - 22) * ((100vw - 320px) / (2000 - 320)));
+  line-height: calc( 26.4px + (52.8 - 26.4) * ((100vw - 320px) / (2000 - 320)));
 }

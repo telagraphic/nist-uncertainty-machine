@@ -1,3 +1,8 @@
+@mixin modular-scale($s-font, $l-font, $height-scale, $min-viewport, $max-viewport)
+  font-size: calc(#{$s-font}px + (#{$l-font} - #{$s-font}) * ((100vw - #{$min-viewport}px) / (#{$max-viewport} - #{$min-viewport})))
+  line-height: calc( #{$s-font * $height-scale}px + (#{$l-font * $height-scale} - #{$s-font * $height-scale}) * ((100vw - #{$min-viewport}px) / (#{$max-viewport} - #{$min-viewport})))
+
+
 header
   grid-area: header
   display: grid
@@ -23,8 +28,9 @@ header
 
   .logo
     grid-area: logo
-    width: 55vw
-    max-width: calc(200px + (300 - 200) * ((100vw - 320px) / (2000 - 320)))
+    // width: 7vw
+    // max-width: calc(200px + (300 - 200) * ((100vw - 320px) / (2000 - 320)))
+    max-width: calc(50px + (75 - 50) * ((100vw - 320px) / (2000 - 320)))
 
     @media (min-width: 35em)
       // width: 30rem
@@ -41,11 +47,13 @@ header
     display: flex
     flex-direction: column
     text-align: left
-    padding: 1rem 0 0 0
+    padding: 0
 
     @media (min-width: 35em)
       flex-direction: column
       text-align: left
+
+      padding: .5rem 0
 
 
     .name
@@ -59,3 +67,4 @@ header
         padding: 0
 
     h4
+      @include modular-scale(22, 44, 1.2, 320, 2000)
