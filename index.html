@@ -13,6 +13,8 @@
     <link rel="stylesheet" type="text/css" href="sass/header.css">
     <link rel="stylesheet" type="text/css" href="sass/form.css">
     <link rel="stylesheet" type="text/css" href="sass/footer.css">
+    <link rel="stylesheet" href="sass/form/buttons.css">
+    <link rel="stylesheet" href="sass/form/inputs.css">
 		<link rel="shortcut icon" href="Uncertainty.ico">
 				<!-- Global site tag (gtag.js) - Google Analytics -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114254568-1"></script>
@@ -75,10 +77,8 @@
         </section>
       </section>
       <section class="form-container">
-        <section class="reset">
-          <input id="reset" type="button" value="Reset" onClick="window.location.replace(location.pathname);">
-        </section>
         <form name="input" id="input"  method="POST" action="validation.php" target="_blank">
+          <button type="reset" id="reset" value="Reset" onClick="window.location.replace(location.pathname);">Reset</button>
           <fieldset class="inputs">
             <h2>Select Inputs & Choose Distributions</h2>
             <section class="">
@@ -87,6 +87,14 @@
                 <input id="inputs" name="inputs" type="range" value="1" min="1" max="15"></input>
                 <button class="remove-input" onclick="">-</button>
               </section>
+              <div class="select">
+                <select aria-label="Select menu example">
+                  <option selected>Open this select menu</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
               <table id="distributions">
               </table>
             </section>
@@ -94,10 +102,14 @@
           <fieldset class="correlations">
             <h3>Set Corellations</h3>
             <section class="sub-step2">
-              <p>
+              <label class="control checkbox" for="correlation">
+                <input type="checkbox" id="correlation">
+                <span class="control-indicator"></span>
                 Choose and set the correlations if necessary
-              </p>
-              <label><input type="checkbox"  name="correlation" id="correlation" value="bar" /> Correlations</label>
+              </label>
+              <!-- <label for="correlation">
+                <input type="checkbox" id="correlation" name="correlation" /> Choose and set the correlations if necessary
+              </label> -->
               <div id='correlationClass'>
                 <table id='correlationTable'>
                 </table>
@@ -132,9 +144,14 @@
               <input name='seed' id='seed' type='number' value='' size="4" max="100" required>
               <!-- <input type="text" pattern="[0-9]*" maxlength="3"> -->
             </section>
-            <section class="symmetrical">
+            <label class="control checkbox" for="symmetrical">
+              <input type="checkbox" id="symmetrical">
+              <span class="control-indicator"></span>
+              Symmetrical coverage intervals
+            </label>
+            <!-- <section class="symmetrical">
               <label><input type="checkbox"  name="symmetrical" id="symmetrical" value="bar" /> Symmetrical coverage intervals</label>
-            </section>
+            </section> -->
           </fieldset>
           <fieldset class="output-quantity">
             <h2>Write the Definition of Output Quantity</h2>
@@ -159,7 +176,7 @@
           <span id='percent'></span>
         </section> -->
         <section class="reset">
-          <input id="reset" type="button" value="Reset" onClick="window.location.replace(location.pathname);">
+          <button type="reset" id="reset" value="Reset" onClick="window.location.replace(location.pathname);">Reset</button>
         </section>
       </section>
     </main>

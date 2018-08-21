@@ -254,6 +254,10 @@ function plotDistribLine(){
 		//  replace the <th> with a <td> with child input from the namelist!
 		var toInsert="<tr class='distrib' id='distrib"+(i)+"' ><td id='label"+(i)+"'>"+"<input type='text' oninput='updateNames()' maxlength='20' class='nameField'  value=x"+(i)+" id='name"+(i)+"' name='name"+(i)+"' >"+"</td><td><select id='distChoice"+(i)+"' name='distChoice"+(i)+"' onchange='plotParamLine("+(i)+")' ></select></td><td><div class='paramLine' id='param"+(i)+"' ></div></td> </tr>";
 
+		//  replace the <th> with a <td> with child input from the namelist!
+		var toInsert="<tr class='distrib' id='distrib"+(i)+"' ><td id='label"+(i)+"'>"+"<input type='text' oninput='updateNames()' maxlength='20' class='nameField'  value=x"+(i)+" id='name"+(i)+"' name='name"+(i)+"' >"+"</td><td><div class='select'><select aria-label='Select menu example' id='distChoice"+(i)+"' name='distChoice"+(i)+"' onchange='plotParamLine("+(i)+")' ></select></div></td><td><div class='paramLine' id='param"+(i)+"' ></div></td> </tr>";
+
+
 		// previous code
 		// var toInsert="<tr class='distrib' id='distrib"+(i)+"' ><th id='label"+(i)+"'>"+$("input[name=name"+i+"]").val()+"</th><td><select id='distChoice"+(i)+"' name='distChoice"+(i)+"' onchange='plotParamLine("+(i)+")' ></select></td><td><div class='paramLine' id='param"+(i)+"' ></div></td> </tr>";
 		$('#distributions').append($(toInsert));
@@ -495,7 +499,7 @@ function plotCorrelationTable(){
 
 		}
 	}
-	var toInsert="<select id='copulaChoice' name='copulaChoice' onchange=copulaChanged() ><option value=0>Gaussian Copula</option><option value=1>Student Copula (No. of degrees of freedom)</option></select>" ;
+	var toInsert="<div class='select'><select id='copulaChoice' name='copulaChoice' onchange=copulaChanged() ><option value=0>Gaussian Copula</option><option value=1>Student Copula (No. of degrees of freedom)</option></select></div>";
 	$('#copula').append($(toInsert));
 
 }

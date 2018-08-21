@@ -123,6 +123,11 @@ I went through the markup and applied HTML5 Outlining to give the site better se
 - Illustrate the header, content, footer with HTML5 tags and grid layout
 - Main grid and Sticky footer code
 
-The header
+Header
 
 SVG use viewBox instead of hard coding the width and height to make it responsive
+I made the Uncertainty Machine and version number larger than the logo to bring attention
+
+Form
+
+Reset button styles

@@ -1,0 +1,155 @@
+// <label class="control checkbox" for="correlation">
+//   <input type="checkbox" id="correlation">
+//   <span class="control-indicator"></span>
+//   Choose and set the correlations if necessary
+// </label>
+
+
+.control
+  position: relative
+  display: inline-block
+  padding: 1.5rem 2rem
+  color: #555
+  cursor: pointer
+
+  &:hover .control-indicator
+    color: #fff
+    background-color: #ccc
+
+  input
+    position: absolute
+    opacity: 0
+    z-index: -1
+
+    // when input is focused set the indicator
+    &:focus ~ .control-indicator
+      box-shadow: 0 0 0 .075rem #fff
+
+    &:checked ~ .control-indicator
+      color: #fff
+      background-color: #0074d9
+
+    &:active ~ .control-indicator
+      color: #fff
+      background-color: #84c6ff
+
+  // replace the real input with a placehold indicator
+  .control-indicator
+    position: absolute
+    // top: .25rem
+    left: 0
+    display: block
+    width:  1.5rem
+    height: 1.5rem
+    line-height: 1rem
+    font-size: 65%
+    color: #eee
+    text-align: center
+    background-color: #eee
+    background-size: 50% 50%
+    background-position: center center
+    background-repeat: no-repeat
+    -webkit-user-select: none
+    -moz-user-select: none
+    -ms-user-select: none
+        user-select: none
+
+
+
+
+.checkbox
+
+  .control-indicator
+    border-radius: .25rem
+
+  input:checked ~ .control-indicator
+    background-image: url(data:image/svg+xmlbase64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgOCA4IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA4IDgiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTYuNCwxTDUuNywxLjdMMi45LDQuNUwyLjEsMy43TDEuNCwzTDAsNC40bDAuNywwLjdsMS41LDEuNWwwLjcsMC43bDAuNy0wLjdsMy41LTMuNWwwLjctMC43TDYuNCwxTDYuNCwxeiINCgkvPg0KPC9zdmc+DQo=)
+
+
+
+
+.select
+  position: relative
+  display: inline-block
+  color: #555
+
+  // add dropdown arrow
+  &:after
+    position: absolute
+    top: 50%
+    right: 1.25rem
+    display: inline-block
+    content: ""
+    width: 0
+    height: 0
+    margin-top: -.15rem
+    pointer-events: none
+    border-top: .35rem solid
+    border-right: .35rem solid transparent
+    border-bottom: .35rem solid transparent
+    border-left: .35rem solid transparent
+
+  select
+    display: inline-block
+    width: 100%
+    margin: 0
+    padding: .5rem 2.25rem .5rem 1rem
+    line-height: 1.5
+    color: #555
+    background-color: #eee
+    border: 0
+    border-radius: .25rem
+    cursor: pointer
+    outline: 0
+    -webkit-appearance: none
+    -moz-appearance: none
+    appearance: none
+
+
+
+    &:focus
+      box-shadow: 0 0 0 .075rem #fff
+
+    // remove firefox focus ring
+    &:focus:-moz-focusring
+      color: transparent
+      text-shadow: 0 0 0 #000
+
+    // hide the arrow in IE10 and up
+    &::-ms-expand
+      display: none
+
+    &:hover
+      background-color: #ddd
+
+    // active/open
+    &:active
+      color: #fff
+      background-color: #0074d9
+
+
+/* IE9 hack to hide the arrow */
+@media screen and (min-width:0\0)
+  .select select
+    z-index: 1
+    padding: .5rem 1.5rem .5rem 1rem
+
+  .select:after
+    z-index: 5
+
+  .select:before
+    position: absolute
+    top: 0
+    right: 1rem
+    bottom: 0
+    z-index: 2
+    content: ""
+    display: block
+    width: 1.5rem
+    background-color: #eee
+
+  .select select:hover,
+  .select select:focus,
+  .select select:active
+    color: #555
+    background-color: #eee
