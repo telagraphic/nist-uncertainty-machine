@@ -87,63 +87,54 @@
                 <input id="inputs" name="inputs" type="range" value="1" min="1" max="15"></input>
                 <button class="remove-input" onclick="">-</button>
               </section>
-              <div class="select">
-                <select aria-label="Select menu example">
-                  <option selected>Open this select menu</option>
-                  <option value="1">One</option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option>
-                </select>
-              </div>
               <table id="distributions">
               </table>
             </section>
           </fieldset>
           <fieldset class="correlations">
-            <h3>Set Corellations</h3>
-            <section class="sub-step2">
-              <label class="control checkbox" for="correlation">
-                <input type="checkbox" id="correlation">
-                <span class="control-indicator"></span>
-                Choose and set the correlations if necessary
-              </label>
+            <h4>Set Corellations</h4>
+            <label class="control checkbox" for="correlation">
+              <input type="checkbox" id="correlation">
+              <span class="control-indicator"></span>
+              Choose and set the correlations if necessary
+            </label>
               <!-- <label for="correlation">
                 <input type="checkbox" id="correlation" name="correlation" /> Choose and set the correlations if necessary
               </label> -->
-              <div id='correlationClass'>
-                <table id='correlationTable'>
-                </table>
-                <table >
-                  <tr>
-                    <td>
-                      <div id="copula">
-                      </div>
-                    </td>
-                    <td>
-                      <div id="copulaParam">
-                      </div>
-                    </td>
-                  </tr>
-                </table>
-              </div>
-            </section>
+            <div id='correlationClass'>
+              <table id='correlationTable'>
+              </table>
+              <table >
+                <tr>
+                  <td>
+                    <div id="copula">
+                    </div>
+                  </td>
+                  <td>
+                    <div id="copulaParam">
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
           </fieldset>
           <fieldset class="set-values">
             <h2>Choose Values</h2>
-            <section class="realizations">
+            <label for="nReal">
               <p>
                 Number of realizations of the output quantity:
               </p>
               <!-- <input name='nReal' id='nReal' type='text' value='1000000'> -->
               <input name='nReal' id='nReal' type='number' value='1000000' max="5000000" required>
-            </section>
-            <section class="random-seed">
+            </label>
+            <label for="seed">
               <p>
                 Random number generator seed, selected at random on screen load or when reset button is pressed.
               </p>
-              <input name='seed' id='seed' type='number' value='' size="4" max="100" required>
               <!-- <input type="text" pattern="[0-9]*" maxlength="3"> -->
-            </section>
+              <input name='seed' id='seed' type='number' value='' size="4" max="100" required>
+            </label>
+            <br>
             <label class="control checkbox" for="symmetrical">
               <input type="checkbox" id="symmetrical">
               <span class="control-indicator"></span>
