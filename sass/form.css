@@ -66,8 +66,10 @@ form h2, form h3, form h4 {
   display: none;
 }
 
-#distributions tr {
+#distributions tr.distrib {
   transition: all .5s ease;
+  display: flex;
+  flex-direction: row;
 }
 
 .set-values section {

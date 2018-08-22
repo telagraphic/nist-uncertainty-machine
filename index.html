@@ -77,7 +77,7 @@
         </section>
       </section>
       <section class="form-container">
-        <form name="input" id="input"  method="POST" action="validation.php" target="_blank">
+        <form name="input" id="input" method="POST" action="validation.php" target="_blank">
           <button type="reset" id="reset" value="Reset" onClick="window.location.replace(location.pathname);">Reset</button>
           <fieldset class="inputs">
             <h2>Select Inputs & Choose Distributions</h2>
@@ -104,7 +104,7 @@
             <div id='correlationClass'>
               <table id='correlationTable'>
               </table>
-              <table >
+              <table>
                 <tr>
                   <td>
                     <div id="copula">
@@ -154,21 +154,14 @@
               <button id='inc' type="button" onclick=addOutput()>+</button>
             </div>
             <section id="container">
-              <textarea class='output'  name='output1' id='output1' height=51px></textarea>
+              <textarea class='output'  name='output1' id='output1'></textarea>
             </section>
           </fieldset>
           <fieldset class="submit">
-            <input type="submit" value="Run the computation"/>
+            <button type="submit" value"Run the computation">Run the computation</button>
           </fieldset>
+
         </form>
-        <!-- <section class="miscellaneous-elements">
-          <div id="state"></div>
-          <span id='error'></span>
-          <span id='percent'></span>
-        </section> -->
-        <section class="reset">
-          <button type="reset" id="reset" value="Reset" onClick="window.location.replace(location.pathname);">Reset</button>
-        </section>
       </section>
     </main>
 

@@ -55,8 +55,8 @@ $( "#inputs" ).change(changeNumberInput).change();
 $('#correlation').change(correlationChange).change();;
 
 $('#container').on( 'keyup', 'textarea', function (e){
-    $(this).css('height', 'auto' );
-    $(this).height( this.scrollHeight );
+    // $(this).css('height', 'auto' );
+    // $(this).height( this.scrollHeight );
 });
 $('#container').find( 'textarea' ).keyup();
 
@@ -152,7 +152,7 @@ function changeNumberOutput(newOut){
 		{
 			oldOut=outputNb +1;
 			outputNb = oldOut;
-			var toInsert="<textarea class='output' name='output"+(oldOut)+"' id='output"+(oldOut)+"' height=51px ></textarea>";
+			var toInsert="<textarea class='output' name='output"+(oldOut)+"' id='output"+(oldOut)+"'></textarea>";
 			$('#container').append($(toInsert));
 		}
 	}

@@ -4,6 +4,7 @@
   padding: 1.5rem 2rem;
   color: #555;
   cursor: pointer;
+  transition: background-color .3s ease-in;
 }
 
 .control:hover .control-indicator {
@@ -19,6 +20,7 @@
 
 .control input:focus ~ .control-indicator {
   box-shadow: 0 0 0 .075rem #fff;
+  background-color: #ddd;
 }
 
 .control input:checked ~ .control-indicator {
@@ -73,7 +75,6 @@
   content: "";
   width: 0;
   height: 0;
-  margin-top: -.15rem;
   pointer-events: none;
   border-top: .35rem solid;
   border-right: .35rem solid transparent;
@@ -96,10 +97,12 @@
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  transition: background-color .3s ease-in;
 }
 
 .select select:focus {
   box-shadow: 0 0 0 .075rem #fff;
+  background-color: #ddd;
 }
 
 .select select:focus:-moz-focusring {
@@ -146,4 +149,40 @@
     color: #555;
     background-color: #eee;
   }
+}
+
+input[type="text"], input[type="number"] {
+  padding: .6rem 1rem;
+  width: 100%;
+  line-height: 1.35;
+  border-radius: .25em;
+  border: none;
+  background-color: #eee;
+  transition: background-color .3s ease-in;
+  cursor: pointer;
+}
+
+input[type="text"]:focus, input[type="text"]:hover, input[type="number"]:focus, input[type="number"]:hover {
+  outline: none;
+  box-shadow: 0 0 0 .075rem #fff;
+  background-color: #ddd;
+}
+
+textarea {
+  display: inline-block;
+  padding: .6rem 1rem;
+  width: 25%;
+  height: 5rem;
+  line-height: 1.35;
+  border-radius: .25em;
+  border: none;
+  background-color: #eee;
+  transition: background-color .3s ease-in;
+  cursor: pointer;
+}
+
+textarea:focus, textarea:hover {
+  outline: none;
+  box-shadow: 0 0 0 .075rem #fff;
+  background-color: #ddd;
 }
