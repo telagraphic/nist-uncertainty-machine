@@ -131,3 +131,7 @@ I made the Uncertainty Machine and version number larger than the logo to bring 
 Form
 
 Reset button styles
+Inputs, wtf forms improvements!
+
+Inputs Table
+ - fr's over %'s 

@@ -285,13 +285,13 @@ function plotParamLine(index){
 		nbParam =  distribInfo[2][$('#distChoice'+(index)).val()];
 		for (var i=0;i<nbParam;i++)
 		{
-			var toInsertp="<input type='text'  class='paramField"+(index)+"' size=5 value=1 name='paramField"+(index)+"-"+(i)+ "' id='paramField"+(index)+"-"+(i)+ "' > ";
+			var toInsertp="<input type='text'  class='paramField"+(index)+"' size=10 value=1 name='paramField"+(index)+"-"+(i)+ "' id='paramField"+(index)+"-"+(i)+ "' > ";
 			$('#param'+(index)).append($(toInsertp));
 		}
 	}
 	else
 	{
-		var toInsertp="<input type='hidden'  class='paramField"+(index)+"' size=5 value=1 name='paramField"+(index)+"-"+(0)+ "' id='paramField"+(index)+"-"+(0)+ "' > ";
+		var toInsertp="<input type='hidden'  class='paramField"+(index)+"' size=10 value=1 name='paramField"+(index)+"-"+(0)+ "' id='paramField"+(index)+"-"+(0)+ "' > ";
 		$('#param'+(index)).append($(toInsertp));
 	}
 
@@ -481,7 +481,7 @@ function plotCorrelationTable(){
 		for (var j=0;j<n;j++)
 		{
 			if (i>j)
-				var toInsert="<td style='max-width: 100%;'><input type='text' disabled  size=5 class='correlField"+i+"' value='' name='correlField"+i+"-"+j+ "' ></td> ";
+				var toInsert="<td style='max-width: 100%;'><input type='text' disabled size=5 class='correlField"+i+"' value='' name='correlField"+i+"-"+j+ "' ></td> ";
 			if (i==j)
 				var toInsert="<td style='max-width: 100%;'><input type='text' disabled size=5 class='correlField"+i+"' value=1 name='correlField"+i+"-"+j+ "' ></td> ";
 			if (i<j)
