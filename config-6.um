@@ -1,0 +1,14 @@
+version=1.3
+seed=73
+nbVar=6
+nbReal=1000000
+variable0=x0;7;0;1
+variable1=x1;7;0;1
+variable2=x2;7;0;1
+variable3=x3;7;0;1
+variable4=x4;7;0;1
+variable5=x5;7;0;1
+expression=x0
+outputFile=./UserData/a884a1ebf50663a7f97135b089970dbb473a888c0bac377c9822ae0089fb0071/results
+symmetrical=false
+correlation=false

@@ -59,32 +59,39 @@
             User's manual available <a href="./NISTUncertaintyMachine-UserManual.pdf"> here.</a>
           </p>
         </header>
-        <section class="dropdown">
-          <button href="#" class="dropbtn">Load examples</button>
-          <nav class="dropdown-content">
-            <a href="./?example=Gauge">Gauge</a>
-            <a href="./?example=Resistance">Resistance</a>
-            <a href="./?example=Stefan">Stefan</a>
-            <a href="./?example=Thermal">Thermal</a>
-            <a href="./?example=Viscosity">Viscosity</a>
-            <a href="./?example=Voltage">Voltage</a>
-            <a href="./?example=Allende">Allende</a>
-          </nav>
-        </section>
         <section class="file-upload">
-          <div id="drop_zone">Drop configuration file here or click to upload</div>
-          <input type='file' title="No file selected" id="files" onchange="pressed()"><label id="fileLabel"> </label>
+
+          <div id="drop_zone">
+            <span class="drop-zone-instructions">Drop configuration file here or click to upload.</span>
+            <label id="fileLabel" for="drop_zone"></label>
+          </div>
+          <input type='file' title="No file selected" id="files" onchange="pressed()">
+
         </section>
       </section>
       <section class="form-container">
         <form name="input" id="input" method="POST" action="validation.php" target="_blank">
-          <button type="reset" id="reset" value="Reset" onClick="window.location.replace(location.pathname);">Reset</button>
+          <fieldset class="top-buttons">
+            <button type="reset" id="reset" value="Reset" onClick="window.location.replace(location.pathname);">Reset</button>
+            <section class="dropdown">
+              <button href="#" class="dropbtn">Load examples</button>
+              <nav class="dropdown-content">
+                <a href="./?example=Gauge">Gauge</a>
+                <a href="./?example=Resistance">Resistance</a>
+                <a href="./?example=Stefan">Stefan</a>
+                <a href="./?example=Thermal">Thermal</a>
+                <a href="./?example=Viscosity">Viscosity</a>
+                <a href="./?example=Voltage">Voltage</a>
+                <a href="./?example=Allende">Allende</a>
+              </nav>
+            </section>
+          </fieldset>
           <fieldset class="inputs">
-            <h2>Select Inputs & Choose Distributions</h2>
+            <h2>1. Select Inputs & Choose Distributions</h2>
             <section class="">
               <section>
                 <button class="add-input"  onclick="" value="1">+</button>
-                <input id="inputs" name="inputs" type="range" value="1" min="1" max="15"></input>
+                <input id="inputs" name="inputs" type="range" value="1" min="1" max="15" style="display: none;"></input>
                 <button class="remove-input" onclick="">-</button>
               </section>
               <table id="distributions">
@@ -92,16 +99,12 @@
             </section>
           </fieldset>
           <fieldset class="correlations">
-            <h4>Set Corellations</h4>
-            <label class="control checkbox" for="correlation">
+            <label id="correlation-checkbox" class="control checkbox" for="correlation">
               <input type="checkbox" id="correlation">
               <span class="control-indicator"></span>
               Choose and set the correlations if necessary
             </label>
-              <!-- <label for="correlation">
-                <input type="checkbox" id="correlation" name="correlation" /> Choose and set the correlations if necessary
-              </label> -->
-            <div id='correlationClass'>
+            <div class='correlationClass'>
               <table id='correlationTable'>
               </table>
               <table id="correlationCopula">
@@ -119,19 +122,19 @@
             </div>
           </fieldset>
           <fieldset class="set-values">
-            <h2>Choose Values</h2>
+            <h2>2. Choose Values</h2>
             <label for="nReal">
               <p>
-                Number of realizations of the output quantity:
+                Number of realizations of the output quantity
               </p>
-              <!-- <input name='nReal' id='nReal' type='text' value='1000000'> -->
               <input name='nReal' id='nReal' type='number' value='1000000' max="5000000" required>
             </label>
+            <br>
+            <br>
             <label for="seed">
               <p>
-                Random number generator seed, selected at random on screen load or when reset button is pressed.
+                Random number generator seed (selected at random reset button is pressed)
               </p>
-              <!-- <input type="text" pattern="[0-9]*" maxlength="3"> -->
               <input name='seed' id='seed' type='number' value='' size="4" max="100" required>
             </label>
             <br>
@@ -145,13 +148,13 @@
             </section> -->
           </fieldset>
           <fieldset class="output-quantity">
-            <h2>Write the Definition of Output Quantity</h2>
+            <h2>3. Write the Definition of Output Quantity</h2>
             <p>
-              Definition of output quantity (R expression): Write the definition of the output quantity in a valid R expression
+              Write the definition of the output quantity in a valid R expression
             </p>
             <section class="textarea-buttons">
-              <button id='dec' type="button" onclick=removeOutput()>-</button>
               <button id='inc' type="button" onclick=addOutput()>+</button>
+              <button id='dec' type="button" onclick=removeOutput()>-</button>
             </section>
             <section id="container">
               <textarea class='output'  name='output1' id='output1'></textarea>

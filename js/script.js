@@ -424,7 +424,10 @@ function setDefault(index,typeDist){
 
 		if(typeDist==24) // Sample
 		{
-			var toInsertp="<div class='labelSample' id='labeltext"+(index)+"'></div><div  id='loadField"+(index)+"'>			<div id='drop_zone"+(index)+"' class='drop_zone2'>Drop sample file here or click to upload</div>	</div><div>		<input type='file' title='No file selected' id='files"+(index)+"' onchange='pressedI("+(index)+")'><label id='fileLabel"+(index)+"'> </label>					</div>";
+
+			// original
+			// var toInsertp="<div class='labelSample' id='labeltext"+(index)+"'></div><div id='loadField"+(index)+"'><div id='drop_zone"+(index)+"' class='drop_zone2'>Drop sample file here or click to upload</div>	</div><div>		<input type='file' title='No file selected' id='files"+(index)+"' onchange='pressedI("+(index)+")'><label id='fileLabel"+(index)+"'> </label></div>";
+			var toInsertp="<div class='row-load-field' id='loadField"+(index)+"'><label id='drop_zone"+(index)+"' class='drop_zone2'>Browse...</label><input type='file' title='No file selected' id='files"+(index)+"' onchange='pressedI("+(index)+")'></div><div class='labelSample' id='labeltext"+(index)+"'></div>";
 			$('#param'+(index)).append($(toInsertp));
 			// Setup the dnd listeners.
 			$('#paramField'+(index)+'-0').val("");
@@ -547,6 +550,7 @@ function handleFileSelect(evt) {
 
     var files = evt.dataTransfer.files; // FileList object.
 		fileLabel.innerHTML = files[0].name;
+		console.log("file uploaded");
 
 	readConfigFile(files[0]);
 }
@@ -555,7 +559,7 @@ function handleFileSelect(evt) {
 function handleFileSelect2(evt) {
     evt.stopPropagation();
     evt.preventDefault();
-
+		$('.drop-zone-instructions').hide();
 	var files = evt.target.files;
 	readConfigFile(files[0]);
 }
@@ -701,7 +705,10 @@ function loadData(lines) {
 		line = lines[index].split("=");
 		var value = line[1].split(";");
 		$("input[name=name"+ii+"]").val(value[0]);
-		$( '#label'+(ii)).text(value[0]);
+
+		// fill the new input field
+		// $( '#label'+(ii)).text(value[0]);
+		$("input[name=name"+ii+"]").text(value[0]);
 		var distType = parseInt(value[1]);
 		if(distribAdvance.indexOf(distType) != -1)
 			sortSelectAdvance(ii);

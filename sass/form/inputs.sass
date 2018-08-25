@@ -5,6 +5,13 @@
 // </label>
 
 
+body
+  --background: white
+  --active: black
+  --focus: gray
+  --active: #ddd
+
+
 .control
   position: relative
   display: inline-block
@@ -16,16 +23,16 @@
   &:hover .control-indicator
     color: #fff
     background-color: #ccc
+    background-color: white
 
   input
     position: absolute
     opacity: 0
     z-index: -1
 
-    // when input is focused set the indicator
     &:focus ~ .control-indicator
-      box-shadow: 0 0 0 .075rem #fff
       background-color: #ddd
+      background-color: white
 
     &:checked ~ .control-indicator
       color: #fff
@@ -37,20 +44,24 @@
 
   // replace the real input with a placehold indicator
   .control-indicator
-    position: absolute
-    // top: .25rem
-    left: 0
     display: block
+    position: absolute
+    left: 0
+
     width:  1.5rem
     height: 1.5rem
-    line-height: 1rem
-    font-size: 65%
-    color: #eee
-    text-align: center
+
     background-color: #eee
+    background-color: white
     background-size: 50% 50%
     background-position: center center
     background-repeat: no-repeat
+
+    font-size: 65%
+    line-height: 1rem
+    color: #eee
+    text-align: center
+
     -webkit-user-select: none
     -moz-user-select: none
     -ms-user-select: none
@@ -73,35 +84,42 @@
 .select
   position: relative
   display: inline-block
-  color: #555
   width: 100%
+  color: #555
 
   // add dropdown arrow
   &:after
+    display: inline-block
     position: absolute
     top: 50%
     right: 1.25rem
-    display: inline-block
-    content: ""
+
     width: 0
     height: 0
 
-    pointer-events: none
     border-top: .35rem solid
     border-right: .35rem solid transparent
     border-bottom: .35rem solid transparent
     border-left: .35rem solid transparent
+
+    content: ""
+    pointer-events: none
+
 
   select
     display: inline-block
     width: 100%
     margin: 0
     padding: .5rem 2.25rem .5rem 1rem
-    line-height: 1.5
-    color: #555
+
     background-color: #eee
+    background-color: white
     border: 0
     border-radius: .25rem
+
+    line-height: 1.5
+    color: #555
+
     cursor: pointer
     outline: 0
     -webkit-appearance: none
@@ -111,7 +129,6 @@
 
 
     &:focus
-      box-shadow: 0 0 0 .075rem #fff
       background-color: #ddd
 
     // remove firefox focus ring
@@ -135,47 +152,57 @@
 /* IE9 hack to hide the arrow */
 @media screen and (min-width:0\0)
   .select select
-    z-index: 1
     padding: .5rem 1.5rem .5rem 1rem
+    z-index: 1
+
 
   .select:after
     z-index: 5
 
   .select:before
+    display: block
     position: absolute
     top: 0
     right: 1rem
     bottom: 0
+
+    width: 1.5rem
+
+    background-color: #eee
     z-index: 2
     content: ""
-    display: block
-    width: 1.5rem
-    background-color: #eee
+
+
+
 
   .select select:hover,
   .select select:focus,
   .select select:active
-    color: #555
     background-color: #eee
+    color: #555
 
 
-input[type="text"], input[type="number"]
+input[type="text"],
+input[type="number"]
   display: inline-block
-  // margin: 0 .5rem
   padding: .6rem .5rem
   max-width: 100%
-  line-height: 1.35
-  border-radius: .25em
 
+  border-radius: .25em
   border: none
   background-color: #eee
+  background-color: white
+
+  line-height: 1.35
+
   transition: background-color .3s ease-in
   cursor: pointer
 
-  &:focus, &:hover
-    outline: none
-    box-shadow: 0 0 0 .075rem #fff
+  &:focus,
+  &:hover
     background-color: #ddd
+    outline: none
+
 
 
 textarea
@@ -186,14 +213,16 @@ textarea
 
   line-height: 1.35
   border-radius: .25em
+  background-color: #eee
+  background-color: white
 
   border: none
-  background-color: #eee
+
   transition: background-color .3s ease-in
   cursor: pointer
   text-align: center
 
-  &:focus, &:hover
-    outline: none
-    box-shadow: 0 0 0 .075rem #fff
+  &:focus,
+  &:hover
     background-color: #ddd
+    outline: none

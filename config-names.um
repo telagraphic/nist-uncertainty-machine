@@ -1,0 +1,13 @@
+version=1.3
+seed=11
+nbVar=5
+nbReal=1000000
+variable0=x0;7;0;1
+variable1=amps;7;0;1
+variable2=wieght;7;0;1
+variable3=mass;7;0;1
+variable4=power;7;0;1
+expression=x0
+outputFile=./UserData/306670e2a51876fc193bd6bfd928d3071f9d04b5025a3f37e817e8f8bd917795/results
+symmetrical=false
+correlation=false

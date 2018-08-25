@@ -134,4 +134,10 @@ Reset button styles
 Inputs, wtf forms improvements!
 
 Inputs Table
- - fr's over %'s 
+ - fr's over %'s
+
+
+Table TH
+ - word-break property
+ - row overflow and spacing breaks
+ - 

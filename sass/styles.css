@@ -9,6 +9,7 @@ body {
   grid-template-rows: auto 1fr auto;
   grid-template-columns: 100%;
   grid-template-areas: "header" "content" "footer";
+  background-color: #f3f3f3;
   font-size: 100%;
   font-family: "Source Sans Pro",Helvetica,Arial,sans-seif;
 }
@@ -26,12 +27,13 @@ a {
 main {
   grid-area: content;
   padding: 1rem;
+  color: #333;
 }
 
 @media (min-width: 35em) {
   main {
     width: 65%;
     margin: 0 auto;
-    padding: 0;
+    padding: 2.5rem 0;
   }
 }

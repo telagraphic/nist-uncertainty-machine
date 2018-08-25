@@ -1,9 +1,13 @@
-.introduction {
-  padding: 2rem 0;
+.introduction h2 {
+  padding: 1.5rem 0 1rem 0;
 }
 
 header.intro-header {
   background-color: none;
+}
+
+header.intro-header p {
+  padding: 0 0 0rem 0;
 }
 
 .form-container {
@@ -21,14 +25,27 @@ form fieldset {
 }
 
 form h2, form h3, form h4 {
-  padding: 1.5rem 0 1rem 0;
+  padding: 1rem 0 2rem 0;
 }
 
-.dropdown .dropdown-content {
+.top-buttons {
+  display: flex;
+}
+
+.top-buttons .dropdown {
+  width: 20%;
+  margin-left: 1.5rem;
+}
+
+.top-buttons .dropdown .dropbtn {
+  width: auto;
+}
+
+.top-buttons .dropdown .dropdown-content {
   display: none;
 }
 
-.dropdown:hover .dropdown-content, .dropdown:active .dropdown-content {
+.top-buttons .dropdown:hover .dropdown-content, .top-buttons .dropdown:active .dropdown-content {
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -40,49 +57,68 @@ form h2, form h3, form h4 {
   border-radius: .25rem;
 }
 
-.dropdown:hover .dropdown-content a, .dropdown:active .dropdown-content a {
+.top-buttons .dropdown:hover .dropdown-content a, .top-buttons .dropdown:active .dropdown-content a {
   padding: .5rem;
   text-decoration: none;
 }
 
-.dropdown:hover .dropdown-content a:hover, .dropdown:active .dropdown-content a:hover {
+.top-buttons .dropdown:hover .dropdown-content a:hover, .top-buttons .dropdown:active .dropdown-content a:hover {
   border-radius: .25em;
   background-color: #eee;
 }
 
 .file-upload {
-  padding: 1rem 0;
+  padding: 0;
+}
+
+.file-upload p {
+  padding: 0 0 1rem 0;
 }
 
 .file-upload #drop_zone {
-  max-width: 100%;
+  max-width: 50%;
   height: 100%;
-  padding: 2rem;
+  padding: 1rem;
+  margin: 1rem 0;
   border: 2px dashed #fff;
   border-radius: 10px;
-  box-shadow: 0 0 0 4px #aaa;
-  background: #bababa;
+  box-shadow: 0 0 0 4px #ddd;
+  background: #ddd;
   line-height: 1.3em;
-  color: #fff;
-  font-size: 21px;
-  text-shadow: -1px -1px #aaa;
-  font-weight: normal;
-  font-weight: bold;
+  color: #333;
+}
+
+.file-upload #fileLabel {
+  color: black;
+  padding: 1rem 0;
+  font-weight: 700;
 }
 
 #files {
   display: none;
 }
 
+#reset {
+  margin: 0;
+}
+
+.inputs {
+  padding: 2rem 0 0 0;
+}
+
+.inputs button {
+  width: 3rem;
+}
+
 #distributions {
-  padding: 0;
+  padding: 1rem 0 0 0;
   margin: 0;
   max-width: 100%;
 }
 
 #distributions tr.distrib {
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: .7fr 2fr 1fr;
   grid-column-gap: .5rem;
   padding: .5rem 0;
 }
@@ -110,46 +146,120 @@ form h2, form h3, form h4 {
 
 #distributions tr.distrib td:nth-child(3) .paramLine {
   display: grid;
-  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;
   grid-column-gap: .5rem;
 }
 
-#distributions tr.distrib td:nth-child(3) .paramLine input {
+#distributions tr.distrib td:nth-child(3) .paramLine input[type="text"] {
   text-align: center;
+  grid-column: span 1;
+}
+
+#distributions tr.distrib td:nth-child(3) .paramLine .row-load-field {
+  margin-top: .65rem;
+  grid-column: 1 / 3;
+  grid-row: 1 / -1;
+}
+
+#distributions tr.distrib td:nth-child(3) .paramLine .row-load-field .drop_zone2 {
+  position: relative;
+  padding: .7rem 2.6rem .7rem 1rem;
+  background-color: #eee;
+  border-radius: .25rem;
+  cursor: pointer;
+}
+
+#distributions tr.distrib td:nth-child(3) .paramLine .row-load-field .drop_zone2:hover, #distributions tr.distrib td:nth-child(3) .paramLine .row-load-field .drop_zone2:focus {
+  background-color: #ddd;
+}
+
+#distributions tr.distrib td:nth-child(3) .paramLine .row-load-field input[type="file"] {
+  position: absolute;
+  width: .1rem;
+  height: .1rem;
+  padding: 0;
+  border: 0;
+  opacity: 0;
+  z-index: -1;
+}
+
+#distributions tr.distrib td:nth-child(3) .paramLine .labelSample {
+  grid-column: 3 / 5;
+  grid-row: 1 / -1;
+}
+
+.set-values {
+  padding: 2rem 0 0 0;
+}
+
+.set-values label p {
+  padding: .5rem 0;
+}
+
+.set-values .control {
+  padding: 2.5rem 2rem 2rem 2rem;
 }
 
 .set-values section {
   padding: .5rem 0;
 }
 
-#correlationClass #correlationTable {
+.correlations {
+  padding: 2rem 0 0 0;
+}
+
+.correlations .checkbox {
+  padding: 0rem 2rem 2rem 2rem;
+}
+
+.correlationClass {
+  display: none;
+}
+
+.correlationClass #correlationTable {
   display: grid;
   grid-template-rows: repeat(1, 1fr);
   grid-row-gap: .5rem;
+  margin-left: 2.5rem;
 }
 
-#correlationClass #correlationTable th {
+.correlationClass #correlationTable #headerCorrel th {
+  word-break: break-all;
+}
+
+.correlationClass #correlationTable th {
   text-align: center;
   max-width: 100%;
   align-self: center;
+  word-break: break-all;
 }
 
-#correlationClass #correlationTable tr {
+.correlationClass #correlationTable tr {
   display: grid;
-  grid-template-columns: 4% repeat(15, 4%);
+  grid-template-columns: repeat(16, 6%);
   grid-column-gap: .5rem;
+  justify-content: center;
 }
 
-#correlationClass #correlationTable input {
+.correlationClass #correlationTable input {
   text-align: center;
 }
 
-#correlationClass #correlationCopula {
-  padding: 1rem 0;
+.correlationClass #correlationCopula {
+  padding: 2rem 0 0 0;
+}
+
+.output-quantity {
+  padding: 2rem 0 0 0;
 }
 
 .output-quantity .textarea-buttons {
   padding: 1rem 0;
+}
+
+.output-quantity button {
+  width: 3rem;
 }
 
 .output-quantity #container {
@@ -165,5 +275,9 @@ form h2, form h3, form h4 {
 }
 
 .submit {
-  padding: 1rem 0;
+  padding: 2rem 0 0 0;
+}
+
+.show-correlation-table {
+  display: block;
 }

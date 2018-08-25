@@ -1,12 +1,5 @@
-$('.add-input').click(function(event) {
-  event.preventDefault();
-  var value = $('#inputs').attr("value");
-  value = ++value;
-  $("#inputs").attr("value", value);
-  console.log(value);
-
-});
-
-$('.remove-input').click(function(event) {
-  event.preventDefault();
+var correlation_checkbox = document.querySelector("#correlation");
+var correlation_table = document.querySelector(".correlationClass");
+correlation_checkbox.addEventListener("click", function(event) {
+  correlation_table.classList.toggle("show-correlation-table");
 });
