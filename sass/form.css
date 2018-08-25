@@ -18,12 +18,24 @@ header.intro-header p {
 }
 
 header.intro-header .dropdown {
-  width: 20%;
+  width: 100%;
   margin: 2rem 0;
 }
 
+@media (min-width: 35em) {
+  header.intro-header .dropdown {
+    width: 20%;
+  }
+}
+
 header.intro-header .dropdown .dropbtn {
-  width: auto;
+  width: 100%;
+}
+
+@media (min-width: 35em) {
+  header.intro-header .dropdown .dropbtn {
+    width: auto;
+  }
 }
 
 header.intro-header .dropdown .dropdown-content {
@@ -34,12 +46,19 @@ header.intro-header .dropdown:hover .dropdown-content, header.intro-header .drop
   display: flex;
   flex-direction: column;
   position: absolute;
-  min-width: 1rem;
+  width: 90%;
   padding: .5rem;
   z-index: 1;
   background-color: #f9f9f9;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   border-radius: .25rem;
+}
+
+@media (min-width: 35em) {
+  header.intro-header .dropdown:hover .dropdown-content, header.intro-header .dropdown:active .dropdown-content {
+    min-width: 1rem;
+    width: auto;
+  }
 }
 
 header.intro-header .dropdown:hover .dropdown-content a, header.intro-header .dropdown:active .dropdown-content a {
@@ -83,7 +102,7 @@ form h2, form h3, form h4 {
 }
 
 .file-upload #drop_zone {
-  max-width: 50%;
+  max-width: 100%;
   height: 100%;
   padding: 1rem;
   margin: 1rem 0;
@@ -93,6 +112,12 @@ form h2, form h3, form h4 {
   background: #ddd;
   line-height: 1.3em;
   color: #333;
+}
+
+@media (min-width: 35em) {
+  .file-upload #drop_zone {
+    max-width: 50%;
+  }
 }
 
 .file-upload #fileLabel {

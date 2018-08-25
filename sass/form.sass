@@ -15,11 +15,17 @@ header.intro-header
       width: 50%
 
   .dropdown
-    width: 20%
+    width: 100%
     margin: 2rem 0
 
+    @media (min-width: 35em)
+      width: 20%
+
     .dropbtn
-      width: auto
+      width: 100%
+
+      @media (min-width: 35em)
+        width: auto
 
     .dropdown-content
       display: none
@@ -29,7 +35,7 @@ header.intro-header
       flex-direction: column
       position: absolute
 
-      min-width: 1rem
+      width: 90%
       padding: .5rem
 
 
@@ -38,6 +44,10 @@ header.intro-header
 
       box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2)
       border-radius: .25rem
+
+      @media (min-width: 35em)
+        min-width: 1rem
+        width: auto
 
 
       a
@@ -74,7 +84,7 @@ form
     padding: 0 0 1rem 0
 
   #drop_zone
-    max-width: 50%
+    max-width: 100%
     height: 100%
     padding: 1rem
     margin: 1rem 0
@@ -86,6 +96,9 @@ form
 
     line-height: 1.3em
     color: #333
+
+    @media (min-width: 35em)
+      max-width: 50%
 
   #fileLabel
     color: black
