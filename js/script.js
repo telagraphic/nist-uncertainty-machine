@@ -89,7 +89,7 @@ function addInput() {
 	newInputNb=parseInt($('#inputs').val());
 	for (var i=inputNb;i<newInputNb;i++)
 	{
-		var toInsert="<input type='text' oninput='updateNames()' maxlength='20' class='nameField'  value=x"+(i)+" id='name"+(i)+"' name='name"+(i)+"' > ";
+		var toInsert="<input required type='text' oninput='updateNames()' maxlength='20' class='nameField' value=x"+(i)+" id='name"+(i)+"' name='name"+(i)+"'> ";
 		// $('#nameList').append($(toInsert));
 		$("#distributions tr#distrib"+(i)).append($(toInsert));
 	}
@@ -106,16 +106,37 @@ function addInput() {
 
 }
 
-function removeInput() {
-
+function addRow() {
+	$('.add-input').change(function() {
+	  console.log("click");
+	});
 }
+
+
+$('.add-input').click(function(event) {
+	event.preventDefault();
+	var inputs = parseInt($('#inputs').val());
+	inputs = inputs+1;
+	$('#inputs').val(inputs);
+	console.log($('#inputs').val());
+	changeNumberInput()
+});
+
+$('.remove-input').click(function(event) {
+	event.preventDefault();
+	var inputs = parseInt($('#inputs').val());
+	inputs = inputs-1;
+	$('#inputs').val(inputs);
+	console.log($('#inputs').val());
+	changeNumberInput()
+})
 
 
 function changeNumberInput(){
 	newInputNb=parseInt($('#inputs').val());
 	for (var i=inputNb;i<newInputNb;i++)
 	{
-		var toInsert="<input type='text' oninput='updateNames()' maxlength='20' class='nameField'  value=x"+(i)+" id='name"+(i)+"' name='name"+(i)+"' > ";
+		var toInsert="<input required type='text' oninput='updateNames()' maxlength='20' class='nameField'  value=x"+(i)+" id='name"+(i)+"' name='name"+(i)+"'> ";
 		$('#nameList').append($(toInsert));
 		$("#distributions tr#distrib"+(i)).append($(toInsert));
 	}
@@ -252,10 +273,10 @@ function plotDistribLine(){
 	{
 
 		//  replace the <th> with a <td> with child input from the namelist!
-		var toInsert="<tr class='distrib' id='distrib"+(i)+"' ><td id='label"+(i)+"'>"+"<input type='text' oninput='updateNames()' maxlength='20' class='nameField'  value=x"+(i)+" id='name"+(i)+"' name='name"+(i)+"' >"+"</td><td><select id='distChoice"+(i)+"' name='distChoice"+(i)+"' onchange='plotParamLine("+(i)+")' ></select></td><td><div class='paramLine' id='param"+(i)+"' ></div></td> </tr>";
+		var toInsert="<tr class='distrib' id='distrib"+(i)+"' ><td id='label"+(i)+"'>"+"<input required type='text' oninput='updateNames()' maxlength='20' class='nameField'  value=x"+(i)+" id='name"+(i)+"' name='name"+(i)+"' >"+"</td><td><select id='distChoice"+(i)+"' name='distChoice"+(i)+"' onchange='plotParamLine("+(i)+")' ></select></td><td><div class='paramLine' id='param"+(i)+"' ></div></td> </tr>";
 
 		//  replace the <th> with a <td> with child input from the namelist!
-		var toInsert="<tr class='distrib' id='distrib"+(i)+"' ><td id='label"+(i)+"'>"+"<input type='text' oninput='updateNames()' maxlength='20' class='nameField'  value=x"+(i)+" id='name"+(i)+"' name='name"+(i)+"' >"+"</td><td><div class='select'><select aria-label='Select menu example' id='distChoice"+(i)+"' name='distChoice"+(i)+"' onchange='plotParamLine("+(i)+")' ></select></div></td><td><div class='paramLine' id='param"+(i)+"' ></div></td> </tr>";
+		var toInsert="<tr class='distrib' id='distrib"+(i)+"' ><td id='label"+(i)+"'>"+"<input required type='text' oninput='updateNames()' maxlength='20' class='nameField'  value=x"+(i)+" id='name"+(i)+"' name='name"+(i)+"' >"+"</td><td><div class='select'><select aria-label='Select menu example' id='distChoice"+(i)+"' name='distChoice"+(i)+"' onchange='plotParamLine("+(i)+")' ></select></div></td><td><div class='paramLine' id='param"+(i)+"' ></div></td></tr>";
 
 
 		// previous code
@@ -285,13 +306,13 @@ function plotParamLine(index){
 		nbParam =  distribInfo[2][$('#distChoice'+(index)).val()];
 		for (var i=0;i<nbParam;i++)
 		{
-			var toInsertp="<input type='text'  class='paramField"+(index)+"' size=10 value=1 name='paramField"+(index)+"-"+(i)+ "' id='paramField"+(index)+"-"+(i)+ "' > ";
+			var toInsertp="<input required type='text' class='paramField"+(index)+"' size=10 value=1 name='paramField"+(index)+"-"+(i)+ "' id='paramField"+(index)+"-"+(i)+ "' > ";
 			$('#param'+(index)).append($(toInsertp));
 		}
 	}
 	else
 	{
-		var toInsertp="<input type='hidden'  class='paramField"+(index)+"' size=10 value=1 name='paramField"+(index)+"-"+(0)+ "' id='paramField"+(index)+"-"+(0)+ "' > ";
+		var toInsertp="<input required type='hidden' class='paramField"+(index)+"' size=10 value=1 name='paramField"+(index)+"-"+(0)+ "' id='paramField"+(index)+"-"+(0)+ "' > ";
 		$('#param'+(index)).append($(toInsertp));
 	}
 

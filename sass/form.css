@@ -7,7 +7,49 @@ header.intro-header {
 }
 
 header.intro-header p {
-  padding: 0 0 0rem 0;
+  padding: 0 0 1rem 0;
+  width: 100%;
+}
+
+@media (min-width: 35em) {
+  header.intro-header p {
+    width: 50%;
+  }
+}
+
+header.intro-header .dropdown {
+  width: 20%;
+  margin: 2rem 0;
+}
+
+header.intro-header .dropdown .dropbtn {
+  width: auto;
+}
+
+header.intro-header .dropdown .dropdown-content {
+  display: none;
+}
+
+header.intro-header .dropdown:hover .dropdown-content, header.intro-header .dropdown:active .dropdown-content {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  min-width: 1rem;
+  padding: .5rem;
+  z-index: 1;
+  background-color: #f9f9f9;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  border-radius: .25rem;
+}
+
+header.intro-header .dropdown:hover .dropdown-content a, header.intro-header .dropdown:active .dropdown-content a {
+  padding: .5rem;
+  text-decoration: none;
+}
+
+header.intro-header .dropdown:hover .dropdown-content a:hover, header.intro-header .dropdown:active .dropdown-content a:hover {
+  border-radius: .25em;
+  background-color: #eee;
 }
 
 .form-container {
@@ -30,41 +72,6 @@ form h2, form h3, form h4 {
 
 .top-buttons {
   display: flex;
-}
-
-.top-buttons .dropdown {
-  width: 20%;
-  margin-left: 1.5rem;
-}
-
-.top-buttons .dropdown .dropbtn {
-  width: auto;
-}
-
-.top-buttons .dropdown .dropdown-content {
-  display: none;
-}
-
-.top-buttons .dropdown:hover .dropdown-content, .top-buttons .dropdown:active .dropdown-content {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  min-width: 1rem;
-  padding: .5rem;
-  z-index: 1;
-  background-color: #f9f9f9;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  border-radius: .25rem;
-}
-
-.top-buttons .dropdown:hover .dropdown-content a, .top-buttons .dropdown:active .dropdown-content a {
-  padding: .5rem;
-  text-decoration: none;
-}
-
-.top-buttons .dropdown:hover .dropdown-content a:hover, .top-buttons .dropdown:active .dropdown-content a:hover {
-  border-radius: .25em;
-  background-color: #eee;
 }
 
 .file-upload {
@@ -104,6 +111,16 @@ form h2, form h3, form h4 {
 
 .inputs {
   padding: 2rem 0 0 0;
+}
+
+.inputs .input-buttons {
+  position: relative;
+}
+
+.inputs .input-buttons #inputs {
+  opacity: 0;
+  position: absolute;
+  z-index: 1;
 }
 
 .inputs button {
@@ -195,6 +212,11 @@ form h2, form h3, form h4 {
 
 .set-values label p {
   padding: .5rem 0;
+}
+
+.set-values label .error {
+  padding: 0 1rem;
+  font-style: italic;
 }
 
 .set-values .control {

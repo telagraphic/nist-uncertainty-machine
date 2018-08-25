@@ -3,6 +3,8 @@ body {
   --active: black;
   --focus: gray;
   --active: #ddd;
+  --invalid: #fb9584;
+  --valid: none;
 }
 
 .control {
@@ -17,7 +19,6 @@ body {
 .control:hover .control-indicator {
   color: #fff;
   background-color: #ccc;
-  background-color: white;
 }
 
 .control input {
@@ -180,6 +181,28 @@ input[type="number"]:focus,
 input[type="number"]:hover {
   background-color: #ddd;
   outline: none;
+}
+
+input[type="text"]:invalid, input[type="text"]:focus:invalid,
+input[type="number"]:invalid,
+input[type="number"]:focus:invalid {
+  background-color: #fb9584;
+  border: none;
+}
+
+input[type="text"]:required,
+input[type="number"]:required {
+  box-shadow: none;
+}
+
+input[type="text"] ~ .error,
+input[type="number"] ~ .error {
+  display: none;
+}
+
+input[type="text"]:invalid ~ .error,
+input[type="number"]:invalid ~ .error {
+  display: inline-block;
 }
 
 textarea {

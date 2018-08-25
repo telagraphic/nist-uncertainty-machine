@@ -10,6 +10,9 @@ body
   --active: black
   --focus: gray
   --active: #ddd
+  --invalid: #fb9584
+  --valid: none
+  
 
 
 .control
@@ -23,7 +26,7 @@ body
   &:hover .control-indicator
     color: #fff
     background-color: #ccc
-    background-color: white
+
 
   input
     position: absolute
@@ -202,6 +205,20 @@ input[type="number"]
   &:hover
     background-color: #ddd
     outline: none
+
+  &:invalid,
+  &:focus:invalid
+    background-color: #fb9584
+    border: none
+
+  &:required
+    box-shadow: none
+
+  & ~ .error
+    display: none
+
+  &:invalid ~ .error
+    display: inline-block
 
 
 

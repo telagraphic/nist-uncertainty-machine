@@ -8,29 +8,15 @@ header.intro-header
   background-color: none
 
   p
-    padding: 0 0 0rem 0
+    padding: 0 0 1rem 0
+    width: 100%
 
-.form-container
-  padding: 2rem 0
-
-form
-  padding: 0
-
-  fieldset
-    padding: 0rem 0
-    -webkit-appearance: none
-    border: none
-
-  h2, h3, h4
-    padding: 1rem 0 2rem 0
-
-
-.top-buttons
-  display: flex
+    @media (min-width: 35em)
+      width: 50%
 
   .dropdown
     width: 20%
-    margin-left: 1.5rem
+    margin: 2rem 0
 
     .dropbtn
       width: auto
@@ -61,6 +47,24 @@ form
         &:hover
           border-radius: .25em
           background-color: #eee
+
+.form-container
+  padding: 2rem 0
+
+form
+  padding: 0
+
+  fieldset
+    padding: 0rem 0
+    -webkit-appearance: none
+    border: none
+
+  h2, h3, h4
+    padding: 1rem 0 2rem 0
+
+
+.top-buttons
+  display: flex
 
 
 .file-upload
@@ -99,6 +103,15 @@ form
 
 .inputs
   padding: 2rem 0 0 0
+
+
+  .input-buttons
+    position: relative
+
+    #inputs
+      opacity: 0
+      position: absolute
+      z-index: 1
 
   button
     width: 3rem
@@ -188,6 +201,13 @@ form
       padding: .5rem 0
 
     input
+
+
+
+    .error
+      padding: 0 1rem
+      font-style: italic
+      // color: tomato
 
   .control
     padding: 2.5rem 2rem 2rem 2rem

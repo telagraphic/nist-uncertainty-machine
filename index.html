@@ -58,41 +58,43 @@
           <p>
             User's manual available <a href="./NISTUncertaintyMachine-UserManual.pdf"> here.</a>
           </p>
+          <p>
+            The NIST Uncertainty Machine is a Web-based software application to evaluate the measurement uncertainty associated with an
+             output quantity defined by a measurement model of the form <b>y = f(x<sub>1</sub>,...,x<sub>n</sub>)</b>.
+          </p>
+          <section class="dropdown">
+            <button href="#" class="dropbtn">Load examples</button>
+            <nav class="dropdown-content">
+              <a href="./?example=Gauge">Gauge</a>
+              <a href="./?example=Resistance">Resistance</a>
+              <a href="./?example=Stefan">Stefan</a>
+              <a href="./?example=Thermal">Thermal</a>
+              <a href="./?example=Viscosity">Viscosity</a>
+              <a href="./?example=Voltage">Voltage</a>
+              <a href="./?example=Allende">Allende</a>
+            </nav>
+          </section>
         </header>
         <section class="file-upload">
-
           <div id="drop_zone">
             <span class="drop-zone-instructions">Drop configuration file here or click to upload.</span>
             <label id="fileLabel" for="drop_zone"></label>
           </div>
           <input type='file' title="No file selected" id="files" onchange="pressed()">
-
         </section>
       </section>
       <section class="form-container">
         <form name="input" id="input" method="POST" action="validation.php" target="_blank">
           <fieldset class="top-buttons">
             <button type="reset" id="reset" value="Reset" onClick="window.location.replace(location.pathname);">Reset</button>
-            <section class="dropdown">
-              <button href="#" class="dropbtn">Load examples</button>
-              <nav class="dropdown-content">
-                <a href="./?example=Gauge">Gauge</a>
-                <a href="./?example=Resistance">Resistance</a>
-                <a href="./?example=Stefan">Stefan</a>
-                <a href="./?example=Thermal">Thermal</a>
-                <a href="./?example=Viscosity">Viscosity</a>
-                <a href="./?example=Voltage">Voltage</a>
-                <a href="./?example=Allende">Allende</a>
-              </nav>
-            </section>
           </fieldset>
           <fieldset class="inputs">
             <h2>1. Select Inputs & Choose Distributions</h2>
             <section class="">
-              <section>
-                <button class="add-input"  onclick="" value="1">+</button>
-                <input id="inputs" name="inputs" type="range" value="1" min="1" max="15" style="display: none;"></input>
-                <button class="remove-input" onclick="">-</button>
+              <section class="input-buttons">
+                <button class="add-input" value="1">+</button>
+                <input id="inputs" name="inputs" type="range" value="1" min="1" max="15"></input>
+                <button class="remove-input" onclick="removeRow()">-</button>
               </section>
               <table id="distributions">
               </table>
@@ -128,6 +130,9 @@
                 Number of realizations of the output quantity
               </p>
               <input name='nReal' id='nReal' type='number' value='1000000' max="5000000" required>
+              <span class="error">
+                Cannot exceed 5,000,000
+              </span>
             </label>
             <br>
             <br>
