@@ -160,9 +160,16 @@ form h2, form h3, form h4 {
 
 #distributions tr.distrib {
   display: grid;
-  grid-template-columns: .7fr 2fr 1fr;
-  grid-column-gap: .5rem;
-  padding: .5rem 0;
+  grid-template-rows: auto auto auto;
+  grid-row-gap: .5rem;
+  padding: 1rem 0;
+}
+
+@media (min-width: 35em) {
+  #distributions tr.distrib {
+    grid-template-columns: .7fr 2fr 1fr;
+    grid-column-gap: .5rem;
+  }
 }
 
 #distributions tr.distrib td {
@@ -311,9 +318,15 @@ form h2, form h3, form h4 {
 
 .output-quantity #container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto;
+  grid-template-columns: auto;
   grid-gap: .5rem;
+}
+
+@media (min-width: 35em) {
+  .output-quantity #container {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .output-quantity #container textarea {

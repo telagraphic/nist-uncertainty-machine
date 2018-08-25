@@ -136,9 +136,14 @@ form
 
   tr.distrib
     display: grid
-    grid-template-columns: .7fr 2fr 1fr
-    grid-column-gap: .5rem
-    padding: .5rem 0
+    grid-template-rows: auto auto auto
+    grid-row-gap: .5rem
+    padding: 1rem 0
+
+    @media (min-width: 35em)
+      grid-template-columns: .7fr 2fr 1fr
+      grid-column-gap: .5rem
+
 
     td
       margin: 0
@@ -289,9 +294,13 @@ form
 
   #container
     display: grid
-    grid-template-columns: repeat(3, 1fr)
     grid-template-rows: auto
+    grid-template-columns: auto
     grid-gap: .5rem
+
+    @media (min-width: 35em)
+      grid-template-columns: repeat(3, 1fr)
+
 
     textarea
       text-align: left
