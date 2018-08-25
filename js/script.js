@@ -281,7 +281,7 @@ function plotDistribLine(){
 
 		// previous code
 		// var toInsert="<tr class='distrib' id='distrib"+(i)+"' ><th id='label"+(i)+"'>"+$("input[name=name"+i+"]").val()+"</th><td><select id='distChoice"+(i)+"' name='distChoice"+(i)+"' onchange='plotParamLine("+(i)+")' ></select></td><td><div class='paramLine' id='param"+(i)+"' ></div></td> </tr>";
-		$('#distributions').append($(toInsert));
+			$('#distributions').append($(toInsert));
 		sortSelect(i);
 		$( '#distChoice'+(i) ).val(7);
 		plotParamLine(i);
@@ -306,7 +306,7 @@ function plotParamLine(index){
 		nbParam =  distribInfo[2][$('#distChoice'+(index)).val()];
 		for (var i=0;i<nbParam;i++)
 		{
-			var toInsertp="<input required type='text' class='paramField"+(index)+"' size=10 value=1 name='paramField"+(index)+"-"+(i)+ "' id='paramField"+(index)+"-"+(i)+ "' > ";
+			var toInsertp="<input required type='number' class='paramField"+(index)+"' size=10 value=1 name='paramField"+(index)+"-"+(i)+ "' id='paramField"+(index)+"-"+(i)+ "' > ";
 			$('#param'+(index)).append($(toInsertp));
 		}
 	}
@@ -505,11 +505,11 @@ function plotCorrelationTable(){
 		for (var j=0;j<n;j++)
 		{
 			if (i>j)
-				var toInsert="<td style='max-width: 100%;'><input type='text' disabled size=5 class='correlField"+i+"' value='' name='correlField"+i+"-"+j+ "' ></td> ";
+				var toInsert="<td style='max-width: 100%;'><input type='number' disabled size=5 class='correlField"+i+"' value='' name='correlField"+i+"-"+j+ "' ></td> ";
 			if (i==j)
-				var toInsert="<td style='max-width: 100%;'><input type='text' disabled size=5 class='correlField"+i+"' value=1 name='correlField"+i+"-"+j+ "' ></td> ";
+				var toInsert="<td style='max-width: 100%;'><input type='number' disabled size=5 class='correlField"+i+"' value=1 name='correlField"+i+"-"+j+ "' ></td> ";
 			if (i<j)
-				var toInsert="<td style='max-width: 100%;'><input type='text'  class='correlField"+i+"' size=5 value=0  name='correlField"+i+"-"+j+ "' id='correlField"+i+"-"+j+ "' ></td> ";
+				var toInsert="<td style='max-width: 100%;'><input type='number'  class='correlField"+i+"' size=5 value=0  name='correlField"+i+"-"+j+ "' id='correlField"+i+"-"+j+ "' ></td> ";
 
 				// if (i>j)
 				// 	var toInsert="<td><input type='text' disabled  class='correlField"+i+"' size=10 value='' name='correlField"+i+"-"+j+ "' ></td> ";
