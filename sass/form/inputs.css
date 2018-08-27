@@ -202,7 +202,18 @@ input[type="number"] ~ .error {
 
 input[type="text"]:invalid ~ .error,
 input[type="number"]:invalid ~ .error {
-  display: inline-block;
+  font-style: italic;
+  font-weight: bold;
+  display: block;
+  padding: 1rem 0 0 0;
+}
+
+@media (min-width: 35em) {
+  input[type="text"]:invalid ~ .error,
+  input[type="number"]:invalid ~ .error {
+    display: inline-block;
+    padding: 0 1rem;
+  }
 }
 
 textarea {

@@ -12,7 +12,7 @@ body
   --active: #ddd
   --invalid: #fb9584
   --valid: none
-  
+
 
 
 .control
@@ -218,8 +218,14 @@ input[type="number"]
     display: none
 
   &:invalid ~ .error
-    display: inline-block
+    font-style: italic
+    font-weight: bold
+    display: block
+    padding: 1rem 0 0 0
 
+    @media (min-width: 35em)
+      display: inline-block
+      padding: 0 1rem
 
 
 textarea
