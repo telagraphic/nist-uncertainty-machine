@@ -86,19 +86,20 @@ form
   #drop_zone
     max-width: 100%
     height: 100%
+
     padding: 1rem
     margin: 1rem 0
-    border: 2px dashed #fff
-    border-radius: 10px
-
-    box-shadow: 0 0 0 4px #ddd
-    background: #ddd
 
     line-height: 1.3em
-    color: #333
+
 
     @media (min-width: 42em)
       max-width: 50%
+
+    &:hover,
+    &:focus
+      background-color: #ccc
+      box-shadow: 0 0 0 4px #ccc
 
   #fileLabel
     color: black

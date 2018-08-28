@@ -5,13 +5,17 @@
 // </label>
 
 
+
+// --background: #DFDFDF
+
 body
-  --background: white
-  --active: black
-  --focus: gray
-  --active: #ddd
-  --invalid: #fb9584
+  // --input-background: #F2F2F2
+  --input-background: #E6E6E6
+  --input-focus-hover: #CDCDCD
+  --input-active: #D9D9D9
+  --input-invalid: #fb9584
   --valid: none
+
 
 
 
@@ -25,17 +29,17 @@ body
 
   &:hover .control-indicator
     color: #fff
-    background-color: #ccc
+    background-color: var(--input-focus-hover)
 
 
   input
     position: absolute
     opacity: 0
     z-index: -1
+    background-color: var(--input-background)
 
     &:focus ~ .control-indicator
-      background-color: #ddd
-      background-color: white
+      background-color: var(--input-focus-hover)
 
     &:checked ~ .control-indicator
       color: #fff
@@ -54,8 +58,7 @@ body
     width:  1.5rem
     height: 1.5rem
 
-    background-color: #eee
-    background-color: white
+    background-color: var(--input-background)
     background-size: 50% 50%
     background-position: center center
     background-repeat: no-repeat
@@ -70,7 +73,11 @@ body
     -ms-user-select: none
         user-select: none
 
+    transition: background-color .3s ease-in
 
+    &:focus,
+    &:hover
+      background-color: var(--input-focus-hover)
 
 
 .checkbox
@@ -82,13 +89,11 @@ body
       background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgOCA4IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA4IDgiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTYuNCwxTDUuNywxLjdMMi45LDQuNUwyLjEsMy43TDEuNCwzTDAsNC40bDAuNywwLjdsMS41LDEuNWwwLjcsMC43bDAuNy0wLjdsMy41LTMuNWwwLjctMC43TDYuNCwxTDYuNCwxeiINCgkvPg0KPC9zdmc+DQo=)
 
 
-
-
 .select
   position: relative
   display: inline-block
   width: 100%
-  color: #555
+  color: #000
 
   // add dropdown arrow
   &:after
@@ -115,13 +120,13 @@ body
     margin: 0
     padding: .5rem 2.25rem .5rem 1rem
 
-    background-color: #eee
-    background-color: white
+    background-color: var(--input-background)
+
     border: 0
     border-radius: .25rem
 
     line-height: 1.5
-    color: #555
+    color: #000
 
     cursor: pointer
     outline: 0
@@ -131,8 +136,9 @@ body
     transition: background-color .3s ease-in
 
 
-    &:focus
-      background-color: #ddd
+    &:focus,
+    &:hover
+      background-color: var(--input-focus-hover)
 
     // remove firefox focus ring
     &:focus:-moz-focusring
@@ -143,13 +149,10 @@ body
     &::-ms-expand
       display: none
 
-    &:hover
-      background-color: #ddd
-
     // active/open
     &:active
       color: #fff
-      background-color: #0074d9
+      background-color: var(--input-active)
 
 
 /* IE9 hack to hide the arrow */
@@ -171,7 +174,7 @@ body
 
     width: 1.5rem
 
-    background-color: #eee
+    background-color: var(--input-background)
     z-index: 2
     content: ""
 
@@ -179,10 +182,12 @@ body
 
 
   .select select:hover,
-  .select select:focus,
+  .select select:focus
+    background-color: var(--input-focus-hover)
+    color: #000
+
   .select select:active
-    background-color: #eee
-    color: #555
+    background-color: var(--input-active)
 
 
 input[type="text"],
@@ -193,8 +198,8 @@ input[type="number"]
 
   border-radius: .25em
   border: none
-  background-color: #eee
-  background-color: white
+  background-color: var(--input-background)
+
 
   line-height: 1.35
 
@@ -203,8 +208,11 @@ input[type="number"]
 
   &:focus,
   &:hover
-    background-color: #ddd
+    background-color: var(--input-focus-hover)
     outline: none
+
+  &:active
+    background-color: var(--input-active)
 
   &:invalid,
   &:focus:invalid
@@ -236,8 +244,7 @@ textarea
 
   line-height: 1.35
   border-radius: .25em
-  background-color: #eee
-  background-color: white
+  background-color: var(--input-background)
 
   border: none
 
@@ -247,5 +254,124 @@ textarea
 
   &:focus,
   &:hover
-    background-color: #ddd
+    background-color: var(--input-focus-hover)
     outline: none
+
+  &:active
+    background-color: var(--input-active)
+
+
+button
+  --button-background: #282828
+  --button-background: #4E4E4E
+  --button-background: #727272
+  --button-focus-hover: #282828
+  --button-active: var(--input-background)
+
+  display: inline-block
+
+  border: none
+  padding: .5rem
+  margin: 0
+  border-radius: .25em
+
+  text-decoration: none
+  background: var(--button-background)
+  color: #ffffff
+  font-family: inherit
+  font-size: 1.4rem
+
+  cursor: pointer
+  text-align: center
+  transition: background .3s ease-in-out, transform .3s ease
+  -webkit-appearance: none
+  -moz-appearance: none
+
+
+button:hover,
+button:focus
+  background: var(--button-focus-hover)
+
+button:focus
+  outline: none
+
+
+button:active
+  transform: scale(0.99)
+  // box-shadow: 1px 1px 3px .075rem #bababa
+  color: black
+  background-color: var(--button-active)
+
+
+input[type="file"]
+  display: inline-block
+
+  border: none
+  padding: .5rem
+  margin: 0
+  border-radius: .25em
+
+  text-decoration: none
+  background: var(--input-background)
+  color: #ffffff
+  font-family: inherit
+  font-size: 1.5rem
+
+  cursor: pointer
+  text-align: center
+  transition: background 250ms ease-in-out, transform 150ms ease
+  -webkit-appearance: none
+  -moz-appearance: none
+
+
+
+.drop-zone
+  background-color: var(--input-background)
+  box-shadow: 0 0 0 4px var(--input-background)
+  border: 2px dashed #fff
+  border-radius: 10px
+  color: #333
+  transition-property: background-color, box-shadow
+  transition-duration: .3s
+  transition-timing-function: ease-in
+
+
+  &:hover,
+  &:focus
+    background-color: var(--input-focus-hover)
+    box-shadow: 0 0 0 4px #ccc
+
+
+
+
+// #drop_zone
+//   max-width: 100%
+//   height: 100%
+//   padding: 1rem
+//   margin: 1rem 0
+//   border: 2px dashed #fff
+//   border-radius: 10px
+//
+//   box-shadow: 0 0 0 4px #ddd
+//   background: #ddd
+//
+//   line-height: 1.3em
+//   color: #333
+//
+//   transition-property: background-color, box-shadow
+//   transition-duration: .2s
+//   transition-timing-function: ease-in
+//
+//
+//   @media (min-width: 42em)
+//     max-width: 50%
+//
+//   &:hover,
+//   &:focus
+//     background-color: #ccc
+//     box-shadow: 0 0 0 4px #ccc
+//
+// #fileLabel
+//   color: black
+//   padding: 1rem 0
+//   font-weight: 700

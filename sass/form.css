@@ -106,18 +106,18 @@ form h2, form h3, form h4 {
   height: 100%;
   padding: 1rem;
   margin: 1rem 0;
-  border: 2px dashed #fff;
-  border-radius: 10px;
-  box-shadow: 0 0 0 4px #ddd;
-  background: #ddd;
   line-height: 1.3em;
-  color: #333;
 }
 
 @media (min-width: 42em) {
   .file-upload #drop_zone {
     max-width: 50%;
   }
+}
+
+.file-upload #drop_zone:hover, .file-upload #drop_zone:focus {
+  background-color: #ccc;
+  box-shadow: 0 0 0 4px #ccc;
 }
 
 .file-upload #fileLabel {
