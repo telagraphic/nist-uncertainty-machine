@@ -11,7 +11,7 @@ header.intro-header p {
   width: 100%;
 }
 
-@media (min-width: 42em) {
+@media (min-width: 90em) {
   header.intro-header p {
     width: 50%;
   }
@@ -165,7 +165,7 @@ form h2, form h3, form h4 {
   padding: 1rem 0;
 }
 
-@media (min-width: 35em) {
+@media (min-width: 50em) {
   #distributions tr.distrib {
     grid-template-columns: .7fr 2fr 1fr;
     grid-column-gap: .5rem;
