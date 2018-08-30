@@ -162,7 +162,7 @@ form h2, form h3, form h4 {
   display: grid;
   grid-template-rows: auto auto auto;
   grid-row-gap: .5rem;
-  padding: 1rem 0;
+  padding: .5rem 0;
 }
 
 @media (min-width: 50em) {
@@ -241,7 +241,13 @@ form h2, form h3, form h4 {
 }
 
 .set-values {
-  padding: 2rem 0 0 0;
+  padding: 0;
+}
+
+@media (min-width: 42em) {
+  .set-values {
+    padding: 2rem 0 0 0;
+  }
 }
 
 .set-values label p {
@@ -264,79 +270,59 @@ form h2, form h3, form h4 {
   padding: 0rem 2rem 2rem 2rem;
 }
 
-.correlationClass {
-  display: none;
-}
-
-.correlationClass #correlationTable {
+#correlationTable {
   display: grid;
   grid-template-rows: repeat(1, 1fr);
   grid-row-gap: .5rem;
-  grid-template-columns: 100%;
-  margin: 0;
+  padding: 1rem 0;
 }
 
-@media (min-width: 35em) {
-  .correlationClass #correlationTable {
-    grid-template-columns: 50% 50%;
-  }
-}
-
-@media (min-width: 42em) {
-  .correlationClass #correlationTable {
-    margin-left: 2.5rem;
-  }
-}
-
-.correlationClass #correlationTable #headerCorrel {
+#correlationTable #headerCorrel {
   display: none;
 }
 
-@media (min-width: 42em) {
-  .correlationClass #correlationTable #headerCorrel {
+@media (min-width: 85em) {
+  #correlationTable #headerCorrel {
     display: block;
   }
 }
 
-.correlationClass #correlationTable #headerCorrel th {
-  word-break: break-all;
-}
-
-.correlationClass #correlationTable th {
+#correlationTable th {
+  text-align: center;
   max-width: 100%;
   align-self: center;
   word-break: break-all;
 }
 
-.correlationClass #correlationTable tr {
+#correlationTable tr {
   display: grid;
   grid-template-rows: min-content;
   justify-content: center;
 }
 
-@media (min-width: 42em) {
-  .correlationClass #correlationTable tr {
-    grid-template-columns: repeat(16, 6%);
+@media (min-width: 85em) {
+  #correlationTable tr {
+    grid-template-columns: 6rem repeat(auto-fill, minmax(2rem, 5%));
     grid-column-gap: .5rem;
   }
 }
 
-.correlationClass #correlationTable input {
+#correlationTable tr td {
+  justify-content: center;
+}
+
+#correlationTable tr td input {
   text-align: center;
 }
 
-.correlationClass #correlationCopula {
-  padding: 2rem .2rem;
+.output-quantity {
+  padding: 0;
 }
 
 @media (min-width: 42em) {
-  .correlationClass #correlationCopula {
+  .output-quantity {
     padding: 2rem 0 0 0;
   }
-}
-
-.output-quantity {
-  padding: 2rem 0 0 0;
 }
 
 .output-quantity .textarea-buttons {
@@ -366,9 +352,11 @@ form h2, form h3, form h4 {
 }
 
 .submit {
-  padding: 2rem 0 0 0;
+  padding: 2rem 0;
 }
 
-.show-correlation-table {
-  display: block;
+@media (min-width: 42em) {
+  .submit {
+    padding: 2rem 0 0 0;
+  }
 }

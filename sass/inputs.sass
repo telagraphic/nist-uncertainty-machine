@@ -9,15 +9,13 @@
 // --background: #DFDFDF
 
 body
-  // --input-background: #F2F2F2
   --input-background: #E6E6E6
   --input-focus-hover: #CDCDCD
   --input-active: #D9D9D9
-  --input-invalid: #fb9584
+  --input-invalid: #FB9584
+  --input-disabled: #F2F2F2
+  --input-disabled-text: #CECECE
   --valid: none
-
-
-
 
 .control
   position: relative
@@ -235,6 +233,10 @@ input[type="number"]
       display: inline-block
       padding: 0 1rem
 
+  &:disabled
+    background-color: var(--input-disabled)
+    color: var(--input-disabled-text)
+
 
 textarea
   display: inline-block
@@ -324,7 +326,6 @@ input[type="file"]
   -moz-appearance: none
 
 
-
 .drop-zone
   background-color: var(--input-background)
   box-shadow: 0 0 0 4px var(--input-background)
@@ -335,13 +336,10 @@ input[type="file"]
   transition-duration: .3s
   transition-timing-function: ease-in
 
-
   &:hover,
   &:focus
     background-color: var(--input-focus-hover)
     box-shadow: 0 0 0 4px #ccc
-
-
 
 
 // #drop_zone

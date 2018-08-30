@@ -139,7 +139,8 @@ form
     display: grid
     grid-template-rows: auto auto auto
     grid-row-gap: .5rem
-    padding: 1rem 0
+    padding: .5rem 0
+
 
     @media (min-width: 50em)
       grid-template-columns: .7fr 2fr 1fr
@@ -214,7 +215,10 @@ form
 
 
 .set-values
-  padding: 2rem 0 0 0
+  padding: 0
+
+  @media (min-width: 42em)
+    padding: 2rem 0 0 0
 
   label
 
@@ -241,64 +245,93 @@ form
 
 
 
-
 .correlationClass
-  display: none
 
 
-  #correlationTable
+#correlationTable
+  display: grid
+  grid-template-rows: repeat(1, 1fr)
+  grid-row-gap: .5rem
+  padding: 1rem 0
+
+  #headerCorrel
+    display: none
+
+    @media (min-width: 85em)
+      display: block
+
+  th
+    text-align: center
+    max-width: 100%
+    align-self: center
+    word-break: break-all
+
+
+  tr
     display: grid
-    grid-template-rows: repeat(1, 1fr)
-    grid-row-gap: .5rem
-    grid-template-columns: 100%
-    margin: 0
+    grid-template-rows: min-content
+    justify-content: center
 
-
-    @media (min-width: 35em)
-      grid-template-columns: 50% 50%
-
-    @media (min-width: 42em)
-      margin-left: 2.5rem
-
-    #headerCorrel
-      display: none
-
-      @media (min-width: 42em)
-        display: block
-
-
-      th
-        word-break: break-all
-
-    th
-      max-width: 100%
-      align-self: center
-      word-break: break-all
-
-    tr
-      display: grid
-      grid-template-rows: min-content
-      justify-content: center
-
-      @media (min-width: 42em)
-        grid-template-columns: repeat(16, 6%)
-        grid-column-gap: .5rem
+    @media (min-width: 85em)
+      grid-template-columns: 6rem repeat(auto-fill, minmax(2rem, 5%))
+      grid-column-gap: .5rem
 
     td
+      justify-content: center
 
-    input
-      text-align: center
+      input
+        text-align: center
 
-  #correlationCopula
-    padding: 2rem .2rem
 
-    @media (min-width: 42em)
-      padding: 2rem 0 0 0
+
+// .correlationClass
+//   background-color: tomato
+//
+//   #correlationTable
+//     display: grid
+//     grid-template-rows: repeat(1, 1fr)
+//     grid-row-gap: .5rem
+//     margin-left: 2.5rem
+//
+//     #headerCorrel
+//       opacity: 0
+//       position: absolute
+//
+//
+//
+//       th
+//         word-break: break-all
+//
+//     th
+//       text-align: center
+//       max-width: 100%
+//       align-self: center
+//       word-break: break-all
+//
+//     tr
+//       display: grid
+//       grid-template-columns: repeat(16, 5%)
+//       grid-column-gap: .5rem
+//       justify-content: center
+//
+//     td
+//
+//     input
+//       text-align: center
+//
+//   #correlationCopula
+//     padding: 2rem .2rem
+//
+//     @media (min-width: 42em)
+//       padding: 2rem 0 0 0
 
 
 
 .output-quantity
-  padding: 2rem 0 0 0
+  padding: 0
+
+  @media (min-width: 42em)
+    padding: 2rem 0 0 0
 
   .textarea-buttons
     padding: 1rem 0
@@ -323,7 +356,7 @@ form
 
 
 .submit
-  padding: 2rem 0 0 0
+  padding: 2rem 0
 
-.show-correlation-table
-  display: block
+  @media (min-width: 42em)
+    padding: 2rem 0 0 0

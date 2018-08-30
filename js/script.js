@@ -475,7 +475,6 @@ function setDefault(index,typeDist){
 
 }
 
-
 function correlationChange(){
 	if($('#correlation').prop('checked')==true)
 	{

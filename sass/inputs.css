@@ -2,7 +2,9 @@ body {
   --input-background: #E6E6E6;
   --input-focus-hover: #CDCDCD;
   --input-active: #D9D9D9;
-  --input-invalid: #fb9584;
+  --input-invalid: #FB9584;
+  --input-disabled: #F2F2F2;
+  --input-disabled-text: #CECECE;
   --valid: none;
 }
 
@@ -218,6 +220,12 @@ input[type="number"]:invalid ~ .error {
     display: inline-block;
     padding: 0 1rem;
   }
+}
+
+input[type="text"]:disabled,
+input[type="number"]:disabled {
+  background-color: var(--input-disabled);
+  color: var(--input-disabled-text);
 }
 
 textarea {
