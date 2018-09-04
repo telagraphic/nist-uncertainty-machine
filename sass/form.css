@@ -270,11 +270,27 @@ form h2, form h3, form h4 {
   padding: 0rem 2rem 2rem 2rem;
 }
 
+.correlationClass {
+  display: none;
+}
+
 #correlationTable {
   display: grid;
   grid-template-rows: repeat(1, 1fr);
   grid-row-gap: .5rem;
   padding: 1rem 0;
+}
+
+@media (min-width: 50em) {
+  #correlationTable {
+    grid-template-columns: 45% 45%;
+  }
+}
+
+@media (min-width: 85em) {
+  #correlationTable {
+    grid-template-columns: 100%;
+  }
 }
 
 #correlationTable #headerCorrel {
@@ -315,6 +331,10 @@ form h2, form h3, form h4 {
   text-align: center;
 }
 
+#correlationCopula {
+  padding: 2rem .2rem;
+}
+
 .output-quantity {
   padding: 0;
 }
@@ -340,7 +360,19 @@ form h2, form h3, form h4 {
   grid-gap: .5rem;
 }
 
-@media (min-width: 35em) {
+@media (min-width: 20em) {
+  .output-quantity #container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media (min-width: 30em) {
+  .output-quantity #container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 50em) {
   .output-quantity #container {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -359,4 +391,8 @@ form h2, form h3, form h4 {
   .submit {
     padding: 2rem 0 0 0;
   }
+}
+
+.show-correlation-table {
+  display: block;
 }
