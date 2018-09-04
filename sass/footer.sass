@@ -1,29 +1,37 @@
 footer
   grid-area: footer
   background-color: black
-  display: none
+  // display: none
 
   section
     display: flex
     flex-direction: column
+    width: 100%
+
+
     padding: 1rem
 
     @media (min-width: 35em)
       width: 65%
       margin: 0 auto
+      padding: 1rem 0
+
+
+
+    @media (min-width: 68em)
+
       flex-direction: row
-      padding: 0
+      padding: 2rem 0
 
   ul
     display: flex
     flex: 1 0 auto
     flex-direction: column
-    padding: 0
+    padding:  0 1rem 0 0
     list-style: none
 
     @media (min-width: 42em)
       flex-direction: column
-      // margin: 0 auto
       flex-wrap: wrap
       text-align: left
 
@@ -31,15 +39,16 @@ footer
     padding: .5rem 0
     font-size: 1.1rem
 
+
     @media (min-width: 35em)
       // padding: .5rem 1rem
-
-
 
   a
     color: white
     transition: all .4s ease-in
     text-decoration: none
+    word-break: break-all
+    word-wrap: break-word
 
     &:hover
       text-decoration: underline

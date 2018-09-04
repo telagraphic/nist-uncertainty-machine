@@ -257,7 +257,7 @@ button {
   --button-background: #4E4E4E;
   --button-background: #727272;
   --button-focus-hover: #282828;
-  --button-active: var(--input-background);
+  --button-active: #000;
   display: inline-block;
   border: none;
   padding: .5rem;
@@ -286,7 +286,7 @@ button:focus {
 
 button:active {
   transform: scale(0.99);
-  color: black;
+  color: white;
   background-color: var(--button-active);
 }
 
