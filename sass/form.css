@@ -283,7 +283,7 @@ form h2, form h3, form h4 {
 
 @media (min-width: 85em) {
   #correlationTable #headerCorrel {
-    display: block;
+    display: grid;
   }
 }
 
