@@ -1,0 +1,66 @@
+header.main-header {
+  grid-area: header;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: max-content;
+  grid-template-areas: "logo" "title";
+  width: 100%;
+  background-color: black;
+  color: white;
+  padding: 1rem;
+}
+
+@media (min-width: 35em) {
+  header.main-header {
+    grid-template-rows: auto auto;
+    grid-template-columns: auto 65% auto;
+    grid-template-areas: "logo" "title";
+    align-items: center;
+    margin: 0 auto;
+    padding: 1.5rem 0;
+  }
+}
+
+header.main-header .logo {
+  grid-area: logo;
+  max-width: calc(50px + (75 - 50) * ((100vw - 320px) / (2000 - 320)));
+}
+
+header.main-header .logo svg {
+  width: 100%;
+  max-width: 100%;
+}
+
+header.main-header .title {
+  grid-area: title;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding: 0;
+}
+
+@media (min-width: 35em) {
+  header.main-header .title {
+    flex-direction: row;
+    align-items: baseline;
+    text-align: left;
+    padding: .5rem 0;
+  }
+}
+
+@media (min-width: 35em) {
+  header.main-header .title .name {
+    padding: 0 0 0 0;
+  }
+}
+
+@media (min-width: 35em) {
+  header.main-header .title .version {
+    padding: 0 0 0 2rem;
+  }
+}
+
+header.main-header .title h4 {
+  font-size: calc(22px + (44 - 22) * ((100vw - 320px) / (2000 - 320)));
+  line-height: calc( 26.4px + (52.8 - 26.4) * ((100vw - 320px) / (2000 - 320)));
+}

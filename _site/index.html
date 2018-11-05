@@ -1,0 +1,276 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>NIST Uncertainty Machine</title>
+    <meta name="NIST Uncertainty Machine" content="">
+    <link rel="stylesheet" type="text/css" href="sass/normalize.css">
+    <link rel="stylesheet" type="text/css" href="sass/defaults.css">
+    <link rel="stylesheet" type="text/css" href="sass/styles.css">
+    <link rel="stylesheet" type="text/css" href="sass/typography.css">
+    <link rel="stylesheet" type="text/css" href="sass/header.css">
+    <link rel="stylesheet" type="text/css" href="sass/form.css">
+    <link rel="stylesheet" type="text/css" href="sass/footer.css">
+    <link rel="stylesheet" type="text/css" href="sass/inputs.css">
+		<link rel="shortcut icon" href="Uncertainty.ico">
+				<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114254568-1"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+		  gtag('config', 'UA-114254568-1');
+		</script>
+  </head>
+  <body>
+
+    <header class="main-header">
+      <section></section>
+      <section>
+        <section class="logo">
+          <a href="https://www.nist.gov/">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 645 170" version="1">
+              <style>.a{fill-opacity:1;fill-rule:nonzero;fill:white;opacity:1;stroke-dasharray:none;stroke-dashoffset:0;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-width:8;stroke:none;}</style>
+              <defs/>
+              <metadata/>
+              <g>
+                <path d="M45 0.2C20.2 0.2 0 20.4 0 45.2L0.3 170.2 40.3 170.2 40 87.1 40 45.2C40 42.6 42 40.5 44.5 40.2 44.7 40.2 44.8 40.2 45 40.2 46.4 40.2 47.6 40.8 48.5 41.7L153.5 156.8C161.6 165 172.9 170 185.3 170 210.1 170 230.3 149.8 230.3 125L230.3 0 190.3 0 190.3 80.3 190.3 125C190.3 125.1 190.3 125.1 190.3 125.2 190.2 127.9 188 130 185.3 130 183.9 130 182.7 129.4 181.8 128.5L76.8 13.4C68.7 5.3 57.4 0.2 45 0.2z" class="a"/>
+                <path d="M250.3 0L250.3 125C250.3 149.8 270.4 170 295.3 170L465.3 170C493.1 168.7 515.3 145.7 515.3 117.6 515.3 89.5 493.1 66.5 465.3 65.2L465.3 65 355.3 65C349.7 64.7 345.3 59.2 345.3 52.5 345.3 45.8 349.7 40.3 355.3 40L535.3 40 535.3 170 575.3 170 575.3 40 645.3 40 645.3 0 355.3 0 355.3 0.2C327.5 1.5 305.3 24.5 305.3 52.6 305.3 80.7 327.5 103.7 355.3 105L465.3 105C470.8 105.3 475.3 110.8 475.3 117.5 475.3 124.2 470.8 129.7 465.3 130L340 130 295.3 130C292.5 130 290.3 127.8 290.3 125L290.3 80.3 290.3 0 250.3 0z" class="a"/>
+              </g>
+            </svg>
+          </a>
+        </section>
+        <section class="title">
+          <h1 class="name" onClick="window.location.replace('./index.php');">Uncertainty Machine</h4>
+          <h2 class="version" onClick="window.location.replace('./verification.php');">v1.3.5</h4>
+        </section>
+      </section>
+      <section></section>
+    </header>
+
+    <main>
+      <section class="introduction">
+        <header class="intro-header">
+          <h2>Introduction</h2>
+          <p>
+            User's manual available <a href="./NISTUncertaintyMachine-UserManual.pdf"> here.</a>
+          </p>
+          <p>
+            The NIST Uncertainty Machine is a Web-based software application to evaluate the measurement uncertainty associated with an
+             output quantity defined by a measurement model of the form <b>y = f(x<sub>1</sub>,...,x<sub>n</sub>)</b>.
+          </p>
+          <section class="dropdown">
+            <button href="#" class="dropbtn">Load examples</button>
+            <nav class="dropdown-content">
+              <a href="./?example=Gauge">Gauge</a>
+              <a href="./?example=Resistance">Resistance</a>
+              <a href="./?example=Stefan">Stefan</a>
+              <a href="./?example=Thermal">Thermal</a>
+              <a href="./?example=Viscosity">Viscosity</a>
+              <a href="./?example=Voltage">Voltage</a>
+              <a href="./?example=Allende">Allende</a>
+            </nav>
+          </section>
+        </header>
+        <section class="file-upload">
+          <div id="drop_zone" class="drop-zone">
+            <span class="drop-zone-instructions">Drop configuration file here or click to upload.</span>
+            <label id="fileLabel" for="drop_zone"></label>
+          </div>
+          <input type='file' title="No file selected" id="files" onchange="pressed()">
+        </section>
+      </section>
+      <section class="form-container">
+        <form name="input" id="input" method="POST" action="validation.php" target="_blank">
+          <fieldset class="top-buttons">
+            <button type="reset" id="reset" value="Reset" onClick="window.location.replace(location.pathname);">Reset</button>
+          </fieldset>
+          <fieldset class="inputs">
+            <h2>1. Select Inputs & Choose Distributions</h2>
+            <section class="">
+              <section class="input-buttons">
+                <button class="add-input" value="1">+</button>
+                <input id="inputs" name="inputs" type="range" value="1" min="1" max="15"></input>
+                <button class="remove-input" onclick="removeRow()">-</button>
+              </section>
+              <table id="distributions">
+              </table>
+            </section>
+          </fieldset>
+          <fieldset class="correlations">
+            <label id="correlation-checkbox" class="control checkbox" for="correlation">
+              <input type="checkbox" id="correlation">
+              <span class="control-indicator"></span>
+              Choose and set the correlations if necessary
+            </label>
+            <div class='correlationClass'>
+              <table id='correlationTable'>
+              </table>
+              <table id="correlationCopula">
+                <tr>
+                  <td>
+                    <div id="copula">
+                    </div>
+                  </td>
+                  <td>
+                    <div id="copulaParam">
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </fieldset>
+          <fieldset class="set-values">
+            <h2>2. Choose Values</h2>
+            <label for="nReal">
+              <p>
+                Number of realizations of the output quantity
+              </p>
+              <input name='nReal' id='nReal' type='number' value='1000000' max="5000000" required>
+              <span class="error">
+                Cannot exceed 5,000,000
+              </span>
+            </label>
+            <br>
+            <br>
+            <label for="seed">
+              <p>
+                Random number generator seed (selected at random reset button is pressed)
+              </p>
+              <input name='seed' id='seed' type='number' value='' size="4" required>
+            </label>
+            <br>
+            <label class="control checkbox" for="symmetrical">
+              <input type="checkbox" id="symmetrical">
+              <span class="control-indicator"></span>
+              Symmetrical coverage intervals
+            </label>
+            <!-- <section class="symmetrical">
+              <label><input type="checkbox"  name="symmetrical" id="symmetrical" value="bar" /> Symmetrical coverage intervals</label>
+            </section> -->
+          </fieldset>
+          <fieldset class="output-quantity">
+            <h2>3. Write the Definition of Output Quantity</h2>
+            <p>
+              Write the definition of the output quantity in a valid R expression
+            </p>
+            <section class="textarea-buttons">
+              <button id='inc' type="button" onclick=addOutput()>+</button>
+              <button id='dec' type="button" onclick=removeOutput()>-</button>
+            </section>
+            <section id="container">
+              <textarea class='output'  name='output1' id='output1'></textarea>
+            </section>
+          </fieldset>
+          <fieldset class="submit">
+            <button type="submit" value"Run the computation">Run the computation</button>
+          </fieldset>
+
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <section>
+        <ul>
+          <li>
+            <a href="https://www.nist.gov/privacy-policy">
+              Privacy Statement
+            </a>
+          </li>
+          <li>
+            <a href="https://www.nist.gov/privacy-policy#privpolicy">
+              Privacy Policy
+            </a>
+          </li>
+          <li>
+            <a href="https://www.nist.gov/privacy-policy#secnot">
+              Security Notice
+            </a>
+          </li>
+          <li>
+            <a href="https://www.nist.gov/privacy-policy#accesstate">
+              Accessibility Statement
+            </a>
+          </li>
+          <li>
+            <a href="https://www.nist.gov/privacy">
+              NIST Privacy Program
+            </a>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <a href="https://www.nist.gov/no-fear-act-policy">
+              No Fear Act Policy
+            </a>
+          </li>
+          <li>
+            <a href="https://www.nist.gov/disclaimer">
+              Disclaimer
+            </a>
+          </li>
+          <li>
+            <a href="https://www.nist.gov/office-director/freedom-information-act">
+              FOIA
+            </a>
+          </li>
+          <li>
+            <a href="https://www.nist.gov/environmental-policy-statement">
+              Environmental Policy Statement
+            </a>
+          </li>
+          <li>
+            <a href="https://www.nist.gov/privacy-policy#cookie">
+              Cookie Disclaimer
+            </a>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <a href="https://www.nist.gov/summary-report-scientific-integrity">
+              Scientific Integrity Summary
+            </a>
+          </li>
+          <li>
+            <a href="https://www.nist.gov/nist-information-quality-standards">
+              NIST Information Quality Standards
+            </a>
+          </li>
+          <li>
+            <a href="https://business.usa.gov/">
+              Business USA
+            </a>
+          </li>
+          <li>
+            <a href="https://www.commerce.gov/">
+              Commerce.gov
+            </a>
+          </li>
+          <li>
+            <a href="https://www.healthcare.gov/">
+              Healthcare.gov
+            </a>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <a href="http://www.science.gov/">
+              Science.gov
+            </a>
+          </li>
+          <li>
+            <a href="http://www.usa.gov/">
+              USA.gov
+            </a>
+          </li>
+        </ul>
+      </section>
+    </footer>
+    <script src="js/jquery.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/ui.js"></script>
+  </body>
+
+</html>
